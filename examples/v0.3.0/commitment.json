@@ -1,0 +1,22 @@
+{
+  "commitment_id": "com_demo_001",
+  "schema_version": "0.3.0",
+  "version": 1,
+  "promisor_id": "ano_demo_001",
+  "beneficiary_id": "usr_demo_001",
+  "intent": "remind user to submit report",
+  "source_event_id": "evt_demo_001",
+  "due_at": "2026-08-28T09:00:00-07:00",
+  "timezone": "America/Los_Angeles",
+  "trigger": {
+    "type": "time",
+    "expression": "2026-08-28T09:00:00-07:00"
+  },
+  "completion_condition": {
+    "type": "user_confirmation"
+  },
+  "escalation_policy_id": "policy_default_reminder",
+  "priority": "high",
+  "status": "proposed",
+  "requires_followup": true
+}

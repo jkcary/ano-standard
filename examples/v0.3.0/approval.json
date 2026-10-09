@@ -1,0 +1,11 @@
+{
+  "approval_id": "approval_demo_001", "schema_version": "0.3.0", "version": 1, "action_id": "act_demo_001", "proposer_id": "agent_proposer",
+  "parameters_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000", "risk_level": "high",
+  "disclosures": {
+    "what": "Transfer funds", "who": "Alice", "when": "after approval", "key_parameters": {"amount": 1000, "currency": "USD"},
+    "data_scope": ["recipient", "amount"], "reversibility": "compensatable", "residual_effects": ["temporary_fund_hold"],
+    "credentials": ["bank_scoped_token"], "downstream_agents": [], "uncertainties": ["settlement delay"], "alternatives": ["create draft"],
+    "inaction_consequence": "payment remains due", "validity": "10 minutes / one use", "revocation_method": "cancel approval", "notifications": "receipt and settlement updates"
+  },
+  "required_roles": ["risk_owner", "finance_owner"], "decisions": [], "requested_at": "2026-08-27T17:00:00Z", "expires_at": "2026-08-27T17:10:00Z", "status": "requested"
+}

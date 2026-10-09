@@ -1,0 +1,5 @@
+{
+  "assessment_id": "risk_demo_001", "schema_version": "0.3.0", "subject_id": "act_demo_001", "matrix_version": "risk_matrix_v1",
+  "dimensions": {"external_effect": 2, "irreversibility": 2, "financial": 2, "privacy": 1, "legal": 1, "affected_people": 1, "uncertainty": 1},
+  "risk_level": "high", "required_assurance": "strong_multi_party", "reason_codes": ["RISK_HIGH"], "assessed_at": "2026-08-27T17:00:00Z"
+}

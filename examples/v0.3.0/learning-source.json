@@ -1,0 +1,5 @@
+{
+  "source_id": "source_demo_001", "schema_version": "0.3.0", "source_type": "conversation", "license": "principal_authorized", "time_range": "2026-08-27",
+  "selection_rule": "explicit correction only", "synthetic": false, "sensitivity": "confidential", "consent_ref": "consent_demo_001", "contamination_risk": "low",
+  "derived_asset_ids": ["mem_derived_001", "skill_derived_001"], "status": "active"
+}

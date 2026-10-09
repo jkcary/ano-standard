@@ -1,0 +1,44 @@
+{
+  "checks": [
+    {
+      "check": "tenant_isolation",
+      "detail": "same object identifier resolves to tenant-local state",
+      "status": "passed"
+    },
+    {
+      "check": "idempotent_replay",
+      "detail": "retry returned the original transaction",
+      "status": "passed"
+    },
+    {
+      "check": "optimistic_conflict",
+      "detail": "observed=STATE_CONFLICT",
+      "status": "passed"
+    },
+    {
+      "check": "atomic_audit",
+      "detail": "each committed write produced exactly one tenant-local event",
+      "status": "passed"
+    },
+    {
+      "check": "portable_export",
+      "detail": "tenant exports are schema-valid, self-hashed and independently scoped",
+      "status": "passed"
+    }
+  ],
+  "database_engine": "sqlite",
+  "export_hashes": {
+    "tenant_alpha": "sha256:0d6ede2ffd4894a2d9617179b08123e66ec1b82829bbf1a6f95587b85281cb18",
+    "tenant_beta": "sha256:341e81b4aeab3e90a68b7ab6717ae544d19469e0608a1ce0ae371073198b0ec9"
+  },
+  "generated_at": "2026-09-01T09:05:45.548Z",
+  "implementation_source_hash": "sha256:43da2a85858c74550d33eb16f6ab7b05163bf3c1230bf5948b20989caaf8982c",
+  "implementation_version": "0.4.0",
+  "report_id": "sar_e701a249e4a04609bdca290fc267dc39",
+  "schema_version": "0.4.0",
+  "status": "passed",
+  "tenant_heads": {
+    "tenant_alpha": "sha256:78b654a2c4be2aa240fb9a35dd41d5689b9b3492ec0c8e81b0e753e5ee9464bb",
+    "tenant_beta": "sha256:7074989cbb318b745227f75fcb01883690b7bae59210275ee866dd099e7e2bab"
+  }
+}

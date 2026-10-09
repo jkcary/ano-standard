@@ -1,0 +1,33 @@
+{
+  "machine_id": "ano.commitment.lifecycle",
+  "schema_version": "0.3.0",
+  "entity_type": "commitment",
+  "initial_state": "proposed",
+  "states": ["proposed", "accepted", "scheduled", "active", "executed", "verified", "completed", "blocked", "failed", "expired", "cancelled"],
+  "terminal_states": ["completed", "failed", "expired", "cancelled"],
+  "transitions": [
+    {"from": "proposed", "event": "commitment.accepted", "to": "accepted", "guards": ["promisor_assigned", "trigger_present", "completion_condition_present", "capability_available"]},
+    {"from": "proposed", "event": "commitment.cancelled", "to": "cancelled", "guards": []},
+    {"from": "accepted", "event": "commitment.scheduled", "to": "scheduled", "guards": ["schedule_persisted"]},
+    {"from": "accepted", "event": "commitment.cancelled", "to": "cancelled", "guards": []},
+    {"from": "scheduled", "event": "commitment.activated", "to": "active", "guards": ["trigger_claimed"]},
+    {"from": "scheduled", "event": "commitment.blocked", "to": "blocked", "guards": ["block_reason_recorded", "review_time_set"]},
+    {"from": "scheduled", "event": "commitment.failed", "to": "failed", "guards": ["reason_recorded", "notification_recorded"]},
+    {"from": "scheduled", "event": "commitment.expired", "to": "expired", "guards": ["reason_recorded", "notification_recorded"]},
+    {"from": "scheduled", "event": "commitment.cancelled", "to": "cancelled", "guards": ["reason_recorded", "notification_recorded"]},
+    {"from": "active", "event": "commitment.executed", "to": "executed", "guards": ["execution_evidence_present"]},
+    {"from": "active", "event": "commitment.blocked", "to": "blocked", "guards": ["block_reason_recorded", "review_time_set"]},
+    {"from": "active", "event": "commitment.failed", "to": "failed", "guards": ["reason_recorded", "notification_recorded"]},
+    {"from": "active", "event": "commitment.expired", "to": "expired", "guards": ["reason_recorded", "notification_recorded"]},
+    {"from": "active", "event": "commitment.cancelled", "to": "cancelled", "guards": ["reason_recorded", "notification_recorded"]},
+    {"from": "executed", "event": "commitment.verified", "to": "verified", "guards": ["completion_condition_verified"]},
+    {"from": "executed", "event": "commitment.blocked", "to": "blocked", "guards": ["block_reason_recorded", "review_time_set"]},
+    {"from": "executed", "event": "commitment.failed", "to": "failed", "guards": ["reason_recorded", "notification_recorded"]},
+    {"from": "executed", "event": "commitment.expired", "to": "expired", "guards": ["reason_recorded", "notification_recorded"]},
+    {"from": "executed", "event": "commitment.cancelled", "to": "cancelled", "guards": ["reason_recorded", "notification_recorded"]},
+    {"from": "verified", "event": "commitment.completed", "to": "completed", "guards": ["verification_passed"]},
+    {"from": "blocked", "event": "commitment.activated", "to": "active", "guards": ["block_resolved"]},
+    {"from": "blocked", "event": "commitment.failed", "to": "failed", "guards": ["reason_recorded", "notification_recorded"]},
+    {"from": "blocked", "event": "commitment.cancelled", "to": "cancelled", "guards": ["reason_recorded", "notification_recorded"]}
+  ]
+}

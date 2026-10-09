@@ -1,0 +1,23 @@
+{
+  "event_id": "evt_demo_001",
+  "event_type": "user.goal_declared",
+  "schema_version": "0.3.0",
+  "actor_id": "usr_demo_001",
+  "subject_ids": ["goal_demo_001"],
+  "event_time": "2026-08-27T12:01:00Z",
+  "observed_at": "2026-08-27T12:01:00Z",
+  "recorded_at": "2026-08-27T12:01:01Z",
+  "payload": {"title": "Send approved demo message"},
+  "epistemic_status": "asserted",
+  "confidence": 1.0,
+  "sensitivity": "internal",
+  "provenance": {
+    "source_type": "conversation",
+    "source_id": "conv_demo_001",
+    "parent_ids": [],
+    "observed_at": "2026-08-27T12:01:00Z"
+  },
+  "correlation_id": "corr_demo_001",
+  "causation_id": null
+}
+

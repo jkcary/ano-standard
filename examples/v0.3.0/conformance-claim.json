@@ -1,0 +1,14 @@
+{
+  "specification": "ANO",
+  "specification_version": "0.3.0",
+  "profile": "ANO-C",
+  "status": "partial",
+  "implementation_name": "ANO Python Reference Runtime",
+  "implementation_version": "0.3.0-alpha.1",
+  "implementation_source_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "test_suite_version": "0.3.0-alpha.1",
+  "passed_tests": [],
+  "failed_tests": [],
+  "declared_exceptions": [],
+  "issued_at": "2026-08-27T12:10:00Z"
+}

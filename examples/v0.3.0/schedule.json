@@ -1,0 +1,16 @@
+{
+  "schedule_id": "sch_demo_001",
+  "schema_version": "0.3.0",
+  "version": 1,
+  "commitment_id": "com_demo_001",
+  "trigger": {
+    "type": "time",
+    "expression": "2026-08-28T09:00:00-07:00",
+    "termination_condition": "first_success",
+    "max_fires": 1
+  },
+  "next_fire_at": "2026-08-28T09:00:00-07:00",
+  "expires_at": null,
+  "status": "active",
+  "idempotency_key": "commitment:com_demo_001:2026-08-28T09:00:00-07:00"
+}

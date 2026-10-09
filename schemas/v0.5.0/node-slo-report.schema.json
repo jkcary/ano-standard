@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:ano:schema:0.5.0:node-slo-report",
+  "title": "ANO Signed Node SLO Report", "type": "object", "additionalProperties": false,
+  "required": ["report_id", "schema_version", "node_id", "tenant_id", "service", "sequence", "window_start", "window_end", "sample_count", "success_count", "p95_latency_ms", "key_id", "signature"],
+  "properties": {
+    "report_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, "schema_version": {"const": "0.5.0"},
+    "node_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, "tenant_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "service": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, "sequence": {"type": "integer", "minimum": 1},
+    "window_start": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"}, "window_end": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"},
+    "sample_count": {"type": "integer", "minimum": 1}, "success_count": {"type": "integer", "minimum": 0},
+    "p95_latency_ms": {"type": "number", "minimum": 0}, "key_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "signature": {"type": "string", "pattern": "^[A-Za-z0-9+/]*={0,2}$"}
+  }
+}

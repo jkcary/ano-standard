@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.4.0:tenant-state-object",
+  "title": "ANO Tenant State Object",
+  "type": "object", "additionalProperties": false,
+  "required": ["tenant_id", "namespace", "object_id", "schema_version", "version", "status", "payload", "payload_hash", "encryption", "updated_at"],
+  "properties": {
+    "tenant_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "namespace": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "object_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.4.0"},
+    "version": {"type": "integer", "minimum": 1},
+    "status": {"enum": ["active", "deleted"]},
+    "payload": {"oneOf": [{"type": "object"}, {"type": "null"}]},
+    "payload_hash": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"},
+    "encryption": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["algorithm", "key_version", "encrypted_at"],
+          "properties": {
+            "algorithm": {"const": "AES-256-GCM"},
+            "key_version": {"type": "integer", "minimum": 1},
+            "encrypted_at": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"}
+          }
+        }
+      ]
+    },
+    "updated_at": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"}
+  },
+  "allOf": [
+    {"if": {"properties": {"status": {"const": "active"}}, "required": ["status"]}, "then": {"properties": {"payload": {"type": "object"}}}},
+    {"if": {"properties": {"status": {"const": "deleted"}}, "required": ["status"]}, "then": {"properties": {"payload": {"type": "null"}, "encryption": {"type": "null"}}}}
+  ]
+}

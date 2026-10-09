@@ -1,0 +1,5 @@
+{
+  "request_id": "del_demo_001", "schema_version": "0.3.0", "version": 1, "subject_id": "usr_demo_001", "scope": ["all_subject_data"],
+  "targets": [{"target_id": "db_primary", "target_type": "primary", "status": "pending"}],
+  "requested_at": "2026-08-27T17:00:00Z", "completed_at": null, "status": "pending", "exceptions": []
+}

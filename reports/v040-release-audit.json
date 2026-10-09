@@ -1,0 +1,93 @@
+{
+  "audit_id": "rau_1fe1bbd6fb4645b2a1f87581c80dd41e",
+  "audited_at": "2026-09-01T09:05:51.655Z",
+  "checks": [
+    {
+      "check": "v040_schema_catalog",
+      "detail": "declared=23; files=23",
+      "status": "passed"
+    },
+    {
+      "check": "compat_ano_c",
+      "detail": "tests=112; required=16; failed=0",
+      "status": "passed"
+    },
+    {
+      "check": "compat_ano_p",
+      "detail": "tests=112; required=24; failed=0",
+      "status": "passed"
+    },
+    {
+      "check": "compat_ano_g",
+      "detail": "tests=112; required=42; failed=0",
+      "status": "passed"
+    },
+    {
+      "check": "compat_ano_a",
+      "detail": "tests=112; required=52; failed=0",
+      "status": "passed"
+    },
+    {
+      "check": "compat_ano_s",
+      "detail": "tests=112; required=104; failed=0",
+      "status": "passed"
+    },
+    {
+      "check": "storage_acceptance",
+      "detail": "status=passed; checks=5",
+      "status": "passed"
+    },
+    {
+      "check": "production_kernel",
+      "detail": "status=passed; checks=11",
+      "status": "passed"
+    },
+    {
+      "check": "release_specification",
+      "detail": "v0.4 specification is release marked",
+      "status": "passed"
+    },
+    {
+      "check": "implementation_status",
+      "detail": "completion boundary is declared",
+      "status": "passed"
+    },
+    {
+      "check": "stable_version",
+      "detail": "implementation=0.4.0",
+      "status": "passed"
+    },
+    {
+      "check": "model_independent_growth",
+      "detail": "model advancement is an input to governed growth, not a control-plane dependency",
+      "status": "passed"
+    }
+  ],
+  "conformance": {
+    "failed": 0,
+    "passed": 111,
+    "profile_passed": 103,
+    "required_tests": 104,
+    "skipped": 1,
+    "tests_run": 112
+  },
+  "implementation_source_hash": "sha256:43da2a85858c74550d33eb16f6ab7b05163bf3c1230bf5948b20989caaf8982c",
+  "implementation_version": "0.4.0",
+  "inventory": {
+    "production_kernel_checks": 11,
+    "profiles": 5,
+    "state_machines": 12,
+    "storage_checks": 5,
+    "v030_schemas": 63,
+    "v040_schemas": 23
+  },
+  "non_claims": [
+    "not a multi-node database or consensus implementation",
+    "not cross-region high availability or a production RPO/RTO certification",
+    "reference KMS and IdP are not HSM, cloud KMS, OIDC or SPIFFE deployment adapters",
+    "not an independent security, privacy, legal or industry certification",
+    "self-conformance does not authorize unsupervised production self-modification"
+  ],
+  "schema_version": "0.4.0",
+  "status": "passed"
+}

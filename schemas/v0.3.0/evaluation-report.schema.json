@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:ano:schema:0.3.0:evaluation-report", "title": "ANO Sealed Evaluation Report",
+  "type": "object", "additionalProperties": false,
+  "required": ["report_id", "schema_version", "candidate_id", "suite_id", "baseline_hash", "evaluator_hash", "holdout_hash", "threshold_hash", "metrics", "guardrails", "cost_delta", "status", "evaluated_at"],
+  "properties": {
+    "report_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "schema_version": {"const": "0.3.0"}, "candidate_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "suite_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "baseline_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"}, "evaluator_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"}, "holdout_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"}, "threshold_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"},
+    "metrics": {"type": "object", "additionalProperties": {"type": "number"}}, "guardrails": {"type": "object", "additionalProperties": {"type": "boolean"}}, "cost_delta": {"type": "number"},
+    "status": {"enum": ["passed", "failed", "invalid"]}, "evaluated_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"}
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:ano:schema:0.3.0:audit-record", "title": "ANO Tamper-Evident Audit Record",
+  "type": "object", "additionalProperties": false,
+  "required": ["record_id", "schema_version", "sequence", "previous_hash", "record_hash", "actor_id", "action_type", "object_ids", "occurred_at", "authorization_ref", "result", "policy_versions", "metadata"],
+  "properties": {
+    "record_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "schema_version": {"const": "0.3.0"}, "sequence": {"type": "integer", "minimum": 0},
+    "previous_hash": {"oneOf": [{"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"}, {"type": "null"}]}, "record_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"},
+    "actor_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "action_type": {"type": "string", "minLength": 1},
+    "object_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}}, "occurred_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "authorization_ref": {"oneOf": [{"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, {"type": "null"}]}, "result": {"type": "string", "minLength": 1},
+    "policy_versions": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}, "metadata": {"type": "object"}
+  }
+}

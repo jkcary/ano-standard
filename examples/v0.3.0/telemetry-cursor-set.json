@@ -1,0 +1,9 @@
+{
+  "schema_version": "0.3.0", "version": 1,
+  "cursors": [{
+    "deployment_id": "can_demo_001", "source_id": "telemetry_service_001", "sequence": 1,
+    "envelope_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+  }],
+  "updated_at": "2026-08-27T17:05:01Z", "key_id": "cursor_key_001",
+  "signature": "hmac-sha256:0000000000000000000000000000000000000000000000000000000000000000"
+}

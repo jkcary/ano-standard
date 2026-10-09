@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.4.0:tenant-key-destruction-receipt",
+  "title": "ANO Tenant Cryptographic Destruction Receipt",
+  "type": "object", "additionalProperties": false,
+  "required": ["destruction_id", "schema_version", "tenant_id", "destroyed_key_versions", "reason", "destroyed_at", "recoverable"],
+  "properties": {
+    "destruction_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.4.0"},
+    "tenant_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "destroyed_key_versions": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "integer", "minimum": 1}},
+    "reason": {"type": "string", "minLength": 1, "maxLength": 512},
+    "destroyed_at": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"},
+    "recoverable": {"const": false}
+  }
+}

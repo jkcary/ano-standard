@@ -1,0 +1,20 @@
+{
+  "specification": "ANO",
+  "specification_version": "0.3.0",
+  "test_suite_version": "0.5.0-alpha.4",
+  "profile": "ANO-A",
+  "required_tests": [
+    "C-ID-001", "C-EVT-001", "C-STATE-001", "C-ACT-001", "C-ACT-002",
+    "C-PERM-001", "C-PERM-002", "C-VER-001", "C-REC-001", "C-CTRL-001",
+    "C-MOD-001", "C-MOD-002", "C-GOV-001", "C-CTX-001", "C-CON-001", "C-UNIT-001",
+    "P-TIME-001", "P-MEM-001", "P-MEM-002", "P-COM-001", "P-COM-002",
+    "P-SCH-001", "P-LIVE-001", "P-LOOP-001",
+    "G-INJ-001", "G-REV-001", "G-SCOPE-001", "G-PRIV-001", "G-AUD-001",
+    "G-COST-001", "G-MOD-001", "G-HUM-001", "G-SEP-001", "G-A2A-001",
+    "G-ID-001", "G-INC-001", "G-SUP-001", "G-DEL-001", "G-DEG-001",
+    "G-POL-001", "G-KEY-001", "G-APP-001",
+    "A-REF-001", "A-MEM-001", "A-POL-001", "A-SKL-001", "A-RBK-001",
+    "A-MOD-001", "A-MOD-002", "A-GOAL-001", "A-DATA-001", "A-EVAL-001"
+  ],
+  "conditional_tests": ["C-UNIT-001"]
+}

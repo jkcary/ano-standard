@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:ano:schema:0.5.0:federated-budget-allocation",
+  "title": "ANO Signed Federated Budget Allocation", "type": "object", "additionalProperties": false,
+  "required": ["allocation_id", "schema_version", "request_id", "authority_id", "policy_hash", "node_id", "tenant_id", "amounts", "issued_at", "expires_at", "key_id", "signature"],
+  "properties": {
+    "allocation_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, "schema_version": {"const": "0.5.0"},
+    "request_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, "authority_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "policy_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"},
+    "node_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, "tenant_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "amounts": {"type": "object", "minProperties": 1, "propertyNames": {"pattern": "^[A-Za-z][A-Za-z0-9_.:-]{2,127}$"}, "additionalProperties": {"type": "integer", "minimum": 0}},
+    "issued_at": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"}, "expires_at": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"},
+    "key_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, "signature": {"type": "string", "pattern": "^[A-Za-z0-9+/]*={0,2}$"}
+  }
+}

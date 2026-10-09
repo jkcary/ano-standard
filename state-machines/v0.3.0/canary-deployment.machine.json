@@ -1,0 +1,13 @@
+{
+  "machine_id": "ano.canary_deployment.lifecycle", "schema_version": "0.3.0", "entity_type": "canary_deployment", "initial_state": "proposed",
+  "states": ["proposed", "approved", "running", "promoted", "paused", "rolled_back", "failed"], "terminal_states": ["promoted", "rolled_back", "failed"],
+  "transitions": [
+    {"from": "proposed", "event": "canary.approved", "to": "approved", "guards": ["independent_approval", "scope_complete", "rollback_rehearsed"]},
+    {"from": "approved", "event": "canary.started", "to": "running", "guards": ["baseline_sealed", "candidate_verified", "telemetry_active"]},
+    {"from": "running", "event": "canary.promoted", "to": "promoted", "guards": ["guardrails_passed", "observation_window_complete"]},
+    {"from": "running", "event": "canary.paused", "to": "paused", "guards": []},
+    {"from": "running", "event": "canary.rolled_back", "to": "rolled_back", "guards": ["baseline_restored", "restoration_verified"]},
+    {"from": "running", "event": "canary.failed", "to": "failed", "guards": ["rollback_unavailable", "safe_stop_active"]},
+    {"from": "paused", "event": "canary.rolled_back", "to": "rolled_back", "guards": ["baseline_restored", "restoration_verified"]}
+  ]
+}

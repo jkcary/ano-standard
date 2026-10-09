@@ -1,0 +1,13 @@
+{
+  "decision_id": "dec_demo_001",
+  "schema_version": "0.3.0",
+  "goal_id": "goal_demo_001",
+  "plan_id": "plan_demo_001",
+  "outcome": "EXECUTE",
+  "reason_codes": ["AUTHORIZED_LOW_RISK"],
+  "policy_versions": ["policy_demo_001"],
+  "state_versions": {"world_model": 1, "permission_projection": 1},
+  "context_snapshot_id": "dctx_demo_001",
+  "decided_at": "2026-08-27T12:02:01Z"
+}
+

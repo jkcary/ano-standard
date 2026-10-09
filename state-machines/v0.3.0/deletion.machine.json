@@ -1,0 +1,10 @@
+{
+  "machine_id": "ano.deletion.lifecycle", "schema_version": "0.3.0", "entity_type": "deletion_request", "initial_state": "pending",
+  "states": ["pending", "propagating", "completed", "partial", "failed"], "terminal_states": ["completed", "partial", "failed"],
+  "transitions": [
+    {"from": "pending", "event": "deletion.started", "to": "propagating", "guards": ["targets_enumerated"]},
+    {"from": "propagating", "event": "deletion.completed", "to": "completed", "guards": ["all_targets_confirmed"]},
+    {"from": "propagating", "event": "deletion.partial", "to": "partial", "guards": ["exceptions_reported"]},
+    {"from": "propagating", "event": "deletion.failed", "to": "failed", "guards": ["failure_reported"]}
+  ]
+}

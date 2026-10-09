@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.5.0:kms-rewrap-receipt",
+  "title": "ANO Remote KMS Rewrap Receipt",
+  "type": "object", "additionalProperties": false,
+  "required": ["rewrap_id", "schema_version", "provider", "key_resource", "old_key_version", "new_key_version", "purpose", "context_hash", "old_envelope_hash", "new_envelope_hash", "rewrapped_at"],
+  "properties": {
+    "rewrap_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, "schema_version": {"const": "0.5.0"},
+    "provider": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, "key_resource": {"type": "string", "minLength": 3},
+    "old_key_version": {"type": "integer", "minimum": 1}, "new_key_version": {"type": "integer", "minimum": 1},
+    "purpose": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "context_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"},
+    "old_envelope_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"},
+    "new_envelope_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"},
+    "rewrapped_at": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"}
+  }
+}

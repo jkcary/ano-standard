@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:quorum-evidence-ledger-record",
+  "title": "ANO Quorum Evidence Ledger Record",
+  "type": "object", "additionalProperties": false,
+  "required": ["record_id", "schema_version", "sequence", "previous_hash", "bundle_hash", "appended_at", "report", "bundle", "record_hash"],
+  "properties": {
+    "record_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.3.0"},
+    "sequence": {"type": "integer", "minimum": 1},
+    "previous_hash": {"oneOf": [{"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"}, {"type": "null"}]},
+    "bundle_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"},
+    "appended_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "report": {"$ref": "urn:ano:schema:0.3.0:cluster-validation-report"},
+    "bundle": {"$ref": "urn:ano:schema:0.3.0:cluster-evidence-quorum-bundle"},
+    "record_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"}
+  }
+}

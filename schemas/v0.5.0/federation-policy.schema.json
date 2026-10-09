@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:ano:schema:0.5.0:federation-policy",
+  "title": "ANO Signed Federation Policy Payload", "type": "object", "additionalProperties": false,
+  "required": ["policy_id", "version", "allowed_node_ids", "minimum_view_quorum", "global_budget_limits", "tenant_budget_limits", "slo_minimum_nodes", "slo_targets", "withdrawal_required"],
+  "properties": {
+    "policy_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, "version": {"type": "integer", "minimum": 1},
+    "allowed_node_ids": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}},
+    "minimum_view_quorum": {"type": "integer", "minimum": 2}, "slo_minimum_nodes": {"type": "integer", "minimum": 2},
+    "withdrawal_required": {"type": "boolean"},
+    "slo_targets": {"type": "object", "minProperties": 1, "propertyNames": {"pattern": "^[A-Za-z][A-Za-z0-9_.:-]{2,127}$"}, "additionalProperties": {"type": "object", "additionalProperties": false, "required": ["availability_target", "p95_latency_target_ms", "minimum_nodes", "recovery_windows"], "properties": {"availability_target": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1}, "p95_latency_target_ms": {"type": "number", "minimum": 0}, "minimum_nodes": {"type": "integer", "minimum": 2}, "recovery_windows": {"type": "integer", "minimum": 1, "maximum": 10}}}},
+    "global_budget_limits": {"$ref": "#/$defs/dimensions"},
+    "tenant_budget_limits": {"type": "object", "minProperties": 1, "propertyNames": {"pattern": "^[A-Za-z][A-Za-z0-9_.:-]{2,127}$"}, "additionalProperties": {"$ref": "#/$defs/dimensions"}}
+  },
+  "$defs": {"dimensions": {"type": "object", "minProperties": 1, "propertyNames": {"pattern": "^[A-Za-z][A-Za-z0-9_.:-]{2,127}$"}, "additionalProperties": {"type": "integer", "minimum": 0}}}
+}

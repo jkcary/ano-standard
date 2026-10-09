@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.4.0:tenant-export-package",
+  "title": "ANO Portable Tenant Export Package",
+  "type": "object", "additionalProperties": false,
+  "required": ["package_id", "schema_version", "tenant_id", "exported_at", "objects", "audit_events", "idempotency_records", "audit_head_hash", "package_hash"],
+  "properties": {
+    "package_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.4.0"},
+    "tenant_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "exported_at": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"},
+    "objects": {"type": "array", "items": {"$ref": "urn:ano:schema:0.4.0:tenant-state-object"}},
+    "audit_events": {"type": "array", "items": {"$ref": "urn:ano:schema:0.4.0:tenant-audit-event"}},
+    "idempotency_records": {"type": "array", "items": {"$ref": "urn:ano:schema:0.4.0:tenant-idempotency-record"}},
+    "audit_head_hash": {"oneOf": [{"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"}, {"type": "null"}]},
+    "package_hash": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"}
+  }
+}

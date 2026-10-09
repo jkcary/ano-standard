@@ -1,0 +1,80 @@
+{
+  "audit_id": "ara_a107409d5fbb48c5b988416c4834ad99",
+  "audited_at": "2026-09-01T08:20:24.344Z",
+  "checks": [
+    {
+      "check": "v040_schema_catalog",
+      "detail": "declared=9; files=9",
+      "status": "passed"
+    },
+    {
+      "check": "compat_ano_c",
+      "detail": "tests=98; failed=0",
+      "status": "passed"
+    },
+    {
+      "check": "compat_ano_p",
+      "detail": "tests=98; failed=0",
+      "status": "passed"
+    },
+    {
+      "check": "compat_ano_g",
+      "detail": "tests=98; failed=0",
+      "status": "passed"
+    },
+    {
+      "check": "compat_ano_a",
+      "detail": "tests=98; failed=0",
+      "status": "passed"
+    },
+    {
+      "check": "compat_ano_s",
+      "detail": "tests=98; failed=0",
+      "status": "passed"
+    },
+    {
+      "check": "storage_acceptance",
+      "detail": "status=passed; checks=5",
+      "status": "passed"
+    },
+    {
+      "check": "working_draft",
+      "detail": "v0.4 working draft exists",
+      "status": "passed"
+    },
+    {
+      "check": "implementation_status",
+      "detail": "Alpha.1 status and boundaries are declared",
+      "status": "passed"
+    },
+    {
+      "check": "version_prefix",
+      "detail": "implementation=0.4.0-alpha.1",
+      "status": "passed"
+    }
+  ],
+  "conformance": {
+    "failed": 0,
+    "passed": 97,
+    "profile_passed": 89,
+    "required_tests": 90,
+    "skipped": 1,
+    "tests_run": 98
+  },
+  "implementation_source_hash": "sha256:def051357149ac8905e9b173ffe7d49611993cc802ca139fa59f589087d97cf9",
+  "implementation_version": "0.4.0-alpha.1",
+  "inventory": {
+    "state_machines": 12,
+    "v030_schemas": 63,
+    "v040_acceptance_checks": 5,
+    "v040_schemas": 9
+  },
+  "non_claims": [
+    "not a multi-node database",
+    "not cross-region high availability",
+    "not KMS or HSM protected",
+    "not independent security certification"
+  ],
+  "schema_version": "0.4.0",
+  "status": "passed"
+}

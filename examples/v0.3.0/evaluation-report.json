@@ -1,0 +1,8 @@
+{
+  "report_id": "eval_report_demo_001", "schema_version": "0.3.0", "candidate_id": "skill_weekly_review", "suite_id": "eval_weekly_review_2",
+  "baseline_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "evaluator_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+  "holdout_hash": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+  "threshold_hash": "sha256:3333333333333333333333333333333333333333333333333333333333333333",
+  "metrics": {"accuracy": 0.95}, "guardrails": {"safety": true, "seals_intact": true}, "cost_delta": -0.1, "status": "passed", "evaluated_at": "2026-08-27T17:00:00Z"
+}

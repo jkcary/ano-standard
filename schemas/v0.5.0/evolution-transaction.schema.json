@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.5.0:evolution-transaction",
+  "title": "ANO Persistent Evolution Transaction",
+  "type": "object", "additionalProperties": false,
+  "required": ["transaction_id", "schema_version", "component_id", "from_package_id", "to_package_id", "status", "goal_contract_hash", "evaluator_hash", "evaluation_report_ids", "approval_ids", "approver_ids", "created_at", "updated_at"],
+  "properties": {
+    "transaction_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.5.0"},
+    "component_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "from_package_id": {"oneOf": [{"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, {"type": "null"}]},
+    "to_package_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "status": {"enum": ["proposed", "evaluated", "approved", "staged", "active", "rejected", "rolled_back"]},
+    "goal_contract_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"},
+    "evaluator_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"},
+    "evaluation_report_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}},
+    "approval_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}},
+    "approver_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}},
+    "created_at": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"},
+    "updated_at": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"}
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "budget_allocation_id": "fba_d1162e83abbc4db8a92f31ea9f57babb",
+  "checks": [
+    {
+      "check": "signed_release_chain",
+      "detail": "policy and capability packages form a signed hash-linked epoch chain",
+      "status": "passed"
+    },
+    {
+      "check": "history_gap_rejection",
+      "detail": "observed=FEDERATION_HISTORY_GAP",
+      "status": "passed"
+    },
+    {
+      "check": "offline_epoch_catchup",
+      "detail": "offline node replayed every missing signed epoch",
+      "status": "passed"
+    },
+    {
+      "check": "independent_consistent_view",
+      "detail": "independent failure domains signed one policy/package view",
+      "status": "passed"
+    },
+    {
+      "check": "epoch_equivocation_rejection",
+      "detail": "observed=FEDERATION_EQUIVOCATION",
+      "status": "passed"
+    },
+    {
+      "check": "signed_budget_allocation",
+      "detail": "short-lived allocation is signed and node/tenant bound",
+      "status": "passed"
+    },
+    {
+      "check": "budget_rebinding_rejection",
+      "detail": "observed=FEDERATED_BUDGET_BINDING_MISMATCH",
+      "status": "passed"
+    },
+    {
+      "check": "tenant_budget_arbitration",
+      "detail": "observed=FEDERATED_TENANT_BUDGET_EXCEEDED",
+      "status": "passed"
+    },
+    {
+      "check": "error_budget_degrade",
+      "detail": "excess error-budget burn triggered deterministic degradation",
+      "status": "passed"
+    },
+    {
+      "check": "stable_slo_recovery",
+      "detail": "two advancing healthy windows were required before recovery",
+      "status": "passed"
+    },
+    {
+      "check": "missing_slo_quorum_safe_degrade",
+      "detail": "missing independent node evidence could not assert healthy mode",
+      "status": "passed"
+    },
+    {
+      "check": "verified_withdrawal_propagation",
+      "detail": "all required nodes signed complete derived-asset invalidation",
+      "status": "passed"
+    },
+    {
+      "check": "forged_withdrawal_receipt_rejection",
+      "detail": "observed=LEARNING_RECEIPT_SIGNATURE_INVALID",
+      "status": "passed"
+    },
+    {
+      "check": "incomplete_withdrawal_rejection",
+      "detail": "observed=LEARNING_PROPAGATION_INCOMPLETE",
+      "status": "passed"
+    },
+    {
+      "check": "network_runtime_nonclaim",
+      "detail": "separate node databases prove protocol views, not a real multi-host transport or consensus deployment",
+      "status": "passed"
+    }
+  ],
+  "consistent_view_hash": "sha256:6b69b3070c2561d49604fbcee64ca7fa4f39db0e5e6b5444b81df622a17c0b52",
+  "final_epoch": 2,
+  "generated_at": "2026-09-02T03:10:19.896Z",
+  "implementation_source_hash": "sha256:875dc9d5721761f9cbf207b2c8906ef69e97bc3d9ec3e1c696978950f204e5df",
+  "implementation_version": "0.5.0-alpha.4",
+  "network_runtime_verified": false,
+  "report_id": "far_b5a1d8613bd149868169b3e2853bdba8",
+  "schema_version": "0.5.0",
+  "slo_decision_id": "fsd_a55a9187254c49519d2c3b46fd347b54",
+  "status": "passed",
+  "withdrawal_id": "lwd_b8cf7d0427bf4fd29dafc1a2a21a23f8"
+}

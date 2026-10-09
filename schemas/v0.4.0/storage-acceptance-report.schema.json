@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.4.0:storage-acceptance-report",
+  "title": "ANO 0.4 Transactional Storage Acceptance Report",
+  "type": "object", "additionalProperties": false,
+  "required": ["report_id", "schema_version", "implementation_version", "implementation_source_hash", "generated_at", "database_engine", "status", "checks", "tenant_heads", "export_hashes"],
+  "properties": {
+    "report_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.4.0"},
+    "implementation_version": {"type": "string", "minLength": 1},
+    "implementation_source_hash": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"},
+    "generated_at": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"},
+    "database_engine": {"const": "sqlite"},
+    "status": {"enum": ["passed", "failed"]},
+    "checks": {
+      "type": "array", "minItems": 5,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["check", "status", "detail"],
+        "properties": {
+          "check": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+          "status": {"enum": ["passed", "failed"]},
+          "detail": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "tenant_heads": {
+      "type": "object", "minProperties": 2,
+      "additionalProperties": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"}
+    },
+    "export_hashes": {
+      "type": "object", "minProperties": 2,
+      "additionalProperties": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"}
+    }
+  }
+}

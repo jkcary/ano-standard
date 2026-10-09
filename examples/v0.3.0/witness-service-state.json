@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.3.0", "key_id": "witness_ed25519_001",
+  "runner_domain": "cluster_lab_domain", "witness_domain": "independent_evidence_domain",
+  "sequence": 1, "last_run_id": "lab_demo_001",
+  "issued_runs": [{
+    "run_id": "lab_demo_001",
+    "report_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+    "envelope_hash": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+    "envelope": {
+      "payloadType": "application/vnd.ano.cluster-evidence-statement.v1+json",
+      "payload": "eyJkZW1vIjoid2l0bmVzc2VkIn0=",
+      "signatures": [{"keyid": "witness_ed25519_001", "sig": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="}]
+    }
+  }],
+  "last_report_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+  "last_envelope_hash": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+  "last_envelope": {
+    "payloadType": "application/vnd.ano.cluster-evidence-statement.v1+json",
+    "payload": "eyJkZW1vIjoid2l0bmVzc2VkIn0=",
+    "signatures": [{"keyid": "witness_ed25519_001", "sig": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="}]
+  },
+  "updated_at": "2026-08-28T12:00:00Z"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.5.0:workload-identity",
+  "title": "ANO Verified Workload Identity",
+  "type": "object", "additionalProperties": false,
+  "required": ["identity_id", "schema_version", "mode", "issuer", "subject", "audience", "token_id", "key_id", "selectors", "issued_at", "expires_at", "verifier_key_id", "verification_proof"],
+  "properties": {
+    "identity_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, "schema_version": {"const": "0.5.0"},
+    "mode": {"enum": ["oidc", "spiffe"]}, "issuer": {"type": "string", "minLength": 3, "maxLength": 512},
+    "subject": {"type": "string", "minLength": 3, "maxLength": 512}, "audience": {"type": "string", "minLength": 3, "maxLength": 256},
+    "token_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, "key_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "selectors": {"type": "object", "propertyNames": {"pattern": "^[A-Za-z][A-Za-z0-9_.:-]{1,63}$"}, "additionalProperties": {"type": "string", "minLength": 1, "maxLength": 128}},
+    "issued_at": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"}, "expires_at": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"},
+    "verifier_key_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "verification_proof": {"type": "string", "pattern": "^[A-Za-z0-9+/]*={0,2}$"}
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "record_id": "aud_demo_001", "schema_version": "0.3.0", "sequence": 0, "previous_hash": null,
+  "record_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "actor_id": "ano_demo_001", "action_type": "action.authorized", "object_ids": ["act_demo_001"], "occurred_at": "2026-08-27T17:00:00Z",
+  "authorization_ref": "grant_demo_001", "result": "authorized", "policy_versions": ["policy_v1"], "metadata": {}
+}

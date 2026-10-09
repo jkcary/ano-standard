@@ -1,0 +1,5 @@
+{
+  "advancement_id": "madv_demo_001", "schema_version": "0.3.0", "version": 1, "previous_adapter_id": "adapter_reasoner_v1", "candidate_adapter_id": "adapter_reasoner_v2",
+  "discovered_capabilities": ["long_horizon_tool_use"], "changed_limits": {"context_tokens_delta": 800000}, "affected_system_capabilities": ["project_planning"],
+  "required_eval_suites": ["ano_core_regression", "permission_boundary"], "rollout_policy_id": "model_upgrade_standard", "candidate_orchestration_ids": ["orch_project_planning"], "status": "evaluated"
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:ano:schema:0.3.0:learning-source", "title": "ANO Learning Source",
+  "type": "object", "additionalProperties": false,
+  "required": ["source_id", "schema_version", "source_type", "license", "time_range", "selection_rule", "synthetic", "sensitivity", "consent_ref", "contamination_risk", "derived_asset_ids", "status"],
+  "properties": {
+    "source_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "schema_version": {"const": "0.3.0"}, "source_type": {"enum": ["event", "conversation", "external", "human_calibration", "synthetic"]}, "license": {"type": "string"}, "time_range": {"type": "string"}, "selection_rule": {"type": "string", "minLength": 1}, "synthetic": {"type": "boolean"},
+    "sensitivity": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/sensitivity"}, "consent_ref": {"type": ["string", "null"]}, "contamination_risk": {"enum": ["low", "medium", "high", "malicious"]},
+    "derived_asset_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}}, "status": {"enum": ["active", "withdrawn", "quarantined"]}
+  }
+}

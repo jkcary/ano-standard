@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.4.0:kms-wrapped-key",
+  "title": "ANO KMS Wrapped Data Key",
+  "type": "object", "additionalProperties": false,
+  "required": ["provider_id", "master_key_id", "master_key_version", "algorithm", "nonce", "ciphertext", "context_hash"],
+  "properties": {
+    "provider_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "master_key_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "master_key_version": {"type": "integer", "minimum": 1},
+    "algorithm": {"const": "AES-256-GCM"},
+    "nonce": {"type": "string", "pattern": "^[A-Za-z0-9+/]*={0,2}$"},
+    "ciphertext": {"type": "string", "pattern": "^[A-Za-z0-9+/]*={0,2}$"},
+    "context_hash": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"}
+  }
+}

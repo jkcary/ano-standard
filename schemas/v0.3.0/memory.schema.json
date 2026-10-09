@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:memory",
+  "title": "ANO Memory",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "memory_id", "schema_version", "version", "memory_type", "subject_id",
+    "content", "source_event_ids", "epistemic_status", "confidence", "importance",
+    "sensitivity", "status", "created_at", "last_confirmed_at", "review_at", "expires_at",
+    "supersedes_ids", "conflicts_with_ids"
+  ],
+  "properties": {
+    "memory_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.3.0"},
+    "version": {"type": "integer", "minimum": 1},
+    "memory_type": {
+      "enum": ["working", "episodic", "semantic", "preference", "procedural", "relationship", "decision", "failure", "skill", "commitment"]
+    },
+    "subject_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "content": {"not": {"type": "null"}},
+    "source_event_ids": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}
+    },
+    "epistemic_status": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/epistemic_status"},
+    "confidence": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/confidence"},
+    "importance": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/confidence"},
+    "sensitivity": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/sensitivity"},
+    "status": {"enum": ["candidate", "active", "superseded", "disputed", "expired", "archived", "deleted"]},
+    "created_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "last_confirmed_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "review_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "expires_at": {
+      "oneOf": [
+        {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+        {"type": "null"}
+      ]
+    },
+    "supersedes_ids": {
+      "type": "array", "uniqueItems": true,
+      "items": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}
+    },
+    "conflicts_with_ids": {
+      "type": "array", "uniqueItems": true,
+      "items": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}
+    }
+  }
+}

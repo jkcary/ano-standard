@@ -1,0 +1,33 @@
+{
+  "record_id": "eld_demo_001", "schema_version": "0.3.0", "sequence": 1,
+  "previous_hash": null,
+  "record_hash": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+  "envelope_hash": "sha256:3333333333333333333333333333333333333333333333333333333333333333",
+  "appended_at": "2026-08-27T18:06:01Z",
+  "report": {
+    "run_id": "lab_demo_001", "schema_version": "0.3.0", "harness_version": "0.3.0-alpha.8",
+    "context": "docker-desktop", "namespace": "ano-alpha8-a1b2c3d4",
+    "image_ref": "docker.io/library/busybox@sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "environment": {
+      "cluster_type": "kind", "cluster_runtime_version": "v0.33.0", "kubernetes_version": "v1.34.3",
+      "network_policy_provider": "calico", "network_policy_version": "v3.31.6",
+      "network_policy_manifest_sha256": "sha256:34012557637766d4367f0e7d2ea8b6507fca6df68e08b87fcdcd527f689e2637"
+    },
+    "started_at": "2026-08-27T18:00:00Z", "finished_at": "2026-08-27T18:05:00Z",
+    "scenarios": [
+      {"scenario_id": "cluster.deploy", "status": "passed", "evidence": "rollout available"},
+      {"scenario_id": "security.no_token", "status": "passed", "evidence": "token absent"},
+      {"scenario_id": "security.read_only_root", "status": "passed", "evidence": "root write denied"},
+      {"scenario_id": "security.tmp_writable", "status": "passed", "evidence": "tmp writable"},
+      {"scenario_id": "network.egress_denied", "status": "passed", "evidence": "egress denied"},
+      {"scenario_id": "fault.pod_recovery", "status": "passed", "evidence": "replacement ready"},
+      {"scenario_id": "rollback.resources_removed", "status": "passed", "evidence": "resources absent"}
+    ],
+    "cleanup": {"attempted": true, "verified": true}, "status": "passed"
+  },
+  "envelope": {
+    "payloadType": "application/vnd.ano.cluster-evidence-statement.v1+json",
+    "payload": "eyJkZW1vIjoid2l0bmVzc2VkIn0=",
+    "signatures": [{"keyid": "witness_ed25519_001", "sig": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="}]
+  }
+}

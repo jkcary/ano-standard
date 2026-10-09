@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.5.0:remote-wrapped-key",
+  "title": "ANO Purpose-bound Remote KMS Wrapped Key",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "provider", "key_resource", "key_version", "algorithm", "purpose", "context_hash", "request_id", "nonce", "ciphertext"],
+  "properties": {
+    "schema_version": {"const": "0.5.0"},
+    "provider": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "key_resource": {"type": "string", "minLength": 3, "maxLength": 256},
+    "key_version": {"type": "integer", "minimum": 1}, "algorithm": {"const": "AES-256-GCM"},
+    "purpose": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "context_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"},
+    "request_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "nonce": {"type": "string", "minLength": 16}, "ciphertext": {"type": "string", "minLength": 32}
+  }
+}

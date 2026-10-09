@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.4.0:external-identity-assertion",
+  "title": "ANO Signed External Identity Assertion",
+  "type": "object", "additionalProperties": false,
+  "required": ["assertion_id", "schema_version", "issuer", "subject", "audience", "key_id", "issued_at", "expires_at", "signature"],
+  "properties": {
+    "assertion_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.4.0"},
+    "issuer": {"type": "string", "minLength": 3, "maxLength": 512},
+    "subject": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "audience": {"type": "string", "minLength": 3, "maxLength": 256},
+    "key_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "issued_at": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"},
+    "expires_at": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"},
+    "signature": {"type": "string", "pattern": "^[A-Za-z0-9+/]*={0,2}$"}
+  }
+}

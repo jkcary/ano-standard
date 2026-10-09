@@ -1,0 +1,8 @@
+{
+  "statement_id": "wit_demo_001", "schema_version": "0.3.0",
+  "predicate_type": "urn:ano:predicate:cluster-validation:v1",
+  "subject": {"run_id": "lab_demo_001", "report_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111"},
+  "runner_domain": "cluster_lab_domain", "witness_domain": "independent_evidence_domain",
+  "witnessed_at": "2026-08-27T18:06:00Z", "witness_sequence": 1,
+  "previous_envelope_hash": null, "witness_policy": "independent-domain-v1"
+}

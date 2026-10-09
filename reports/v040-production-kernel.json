@@ -1,0 +1,69 @@
+{
+  "audit_head_hash": "sha256:afc161c00240e5702c28cbe3f5125b38bda68abfe58fd8c846be184cd7b8aeed",
+  "backup_hash": "sha256:1c0f75863a71e583fd0e07c6c64576aea153fab683d2b37d8650d19983a9e76e",
+  "checks": [
+    {
+      "check": "external_identity",
+      "detail": "signed external subject resolved to its tenant boundary",
+      "status": "passed"
+    },
+    {
+      "check": "quota_idempotency",
+      "detail": "retry was not double charged",
+      "status": "passed"
+    },
+    {
+      "check": "durable_fence",
+      "detail": "exclusive mutation lease carries a durable fencing token",
+      "status": "passed"
+    },
+    {
+      "check": "encrypted_state",
+      "detail": "tenant payload is ciphertext at rest",
+      "status": "passed"
+    },
+    {
+      "check": "key_rotation",
+      "detail": "new writes are pinned to the rotated tenant key",
+      "status": "passed"
+    },
+    {
+      "check": "audit_binding",
+      "detail": "state commits and tenant audit chain share one transaction boundary",
+      "status": "passed"
+    },
+    {
+      "check": "atomic_migration",
+      "detail": "encrypted transfer preserved state, audit history and idempotency atomically",
+      "status": "passed"
+    },
+    {
+      "check": "verified_restore",
+      "detail": "online backup restored encrypted state and its anchored audit head",
+      "status": "passed"
+    },
+    {
+      "check": "slo_evaluation",
+      "detail": "durable tenant-local observations meet configured SLO",
+      "status": "passed"
+    },
+    {
+      "check": "crypto_erasure",
+      "detail": "destroyed keys are unrecoverable; observed=TENANT_KEY_DESTROYED",
+      "status": "passed"
+    },
+    {
+      "check": "capability_truthfulness",
+      "detail": "reference adapter declares implemented capabilities and explicitly denies multi-node support",
+      "status": "passed"
+    }
+  ],
+  "generated_at": "2026-09-01T09:05:45.698Z",
+  "implementation_source_hash": "sha256:43da2a85858c74550d33eb16f6ab7b05163bf3c1230bf5948b20989caaf8982c",
+  "implementation_version": "0.4.0",
+  "migration_package_hash": "sha256:cf5a0f7c26879eaa564d10413e3317cd48df31059a8125dadba67fde0ef638e7",
+  "report_id": "pkr_77446fab52a0464eb5f5c217a9364178",
+  "schema_version": "0.4.0",
+  "slo_status": "met",
+  "status": "passed"
+}

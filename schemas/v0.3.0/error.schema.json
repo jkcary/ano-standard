@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:error",
+  "title": "ANO Error Envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["error_id", "schema_version", "code", "message", "retryable", "occurred_at", "context"],
+  "properties": {
+    "error_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.3.0"},
+    "code": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]{2,63}$"},
+    "message": {"type": "string", "minLength": 1},
+    "retryable": {"type": "boolean"},
+    "occurred_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "context": {"type": "object"}
+  }
+}
+

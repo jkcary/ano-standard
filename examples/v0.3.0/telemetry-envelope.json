@@ -1,0 +1,8 @@
+{
+  "envelope_id": "tel_demo_001", "schema_version": "0.3.0", "deployment_id": "can_demo_001",
+  "sequence": 1, "source_id": "telemetry_service_001", "observed_at": "2026-08-27T17:05:00Z",
+  "metrics": {"success_rate": 0.95, "safety_incidents": 0, "cost": 3.5}, "previous_hash": null,
+  "envelope_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "key_id": "telemetry_key_001",
+  "signature": "ed25519:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+}

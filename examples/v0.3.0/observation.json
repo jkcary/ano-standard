@@ -1,0 +1,13 @@
+{
+  "observation_id": "obs_demo_001",
+  "schema_version": "0.3.0",
+  "action_id": "act_demo_001",
+  "observer_id": "tool_demo_sender",
+  "observed_at": "2026-08-27T12:02:03Z",
+  "result_code": "ACCEPTED",
+  "result": {"provider_message_id": "msg_demo_001"},
+  "raw_evidence_ref": "artifact://evidence/demo-001",
+  "integrity_hash": "sha256:3333333333333333333333333333333333333333333333333333333333333333",
+  "confidence": 1.0
+}
+

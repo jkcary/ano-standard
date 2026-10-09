@@ -1,0 +1,6 @@
+{
+  "delegation_id": "dlg_demo_001", "schema_version": "0.3.0", "version": 1, "parent_grant_id": "grant_demo_001",
+  "delegator_id": "ano_demo_001", "delegatee_id": "agent_child_001", "capabilities": ["email.send"],
+  "resource_scope": {"recipient": ["alice@example.com"]}, "data_scope": ["contact.email"], "expires_at": "2026-08-28T17:00:00Z",
+  "status": "active", "downstream_ids": []
+}

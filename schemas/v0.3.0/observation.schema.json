@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:observation",
+  "title": "ANO Observation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "observation_id", "schema_version", "action_id", "observer_id", "observed_at",
+    "result_code", "result", "raw_evidence_ref", "integrity_hash", "confidence"
+  ],
+  "properties": {
+    "observation_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.3.0"},
+    "action_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "observer_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "observed_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "result_code": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]{1,63}$"},
+    "result": {"type": "object"},
+    "raw_evidence_ref": {"type": "string", "minLength": 1},
+    "integrity_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"},
+    "confidence": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/confidence"}
+  }
+}
+

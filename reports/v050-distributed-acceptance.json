@@ -1,0 +1,68 @@
+{
+  "checks": [
+    {
+      "check": "capability_truthfulness",
+      "detail": "SQLite declares verified multi-process semantics and denies multi-host support",
+      "status": "passed"
+    },
+    {
+      "check": "transactional_outbox",
+      "detail": "operation state and original message replay share one transaction",
+      "status": "passed"
+    },
+    {
+      "check": "tenant_scoped_claim",
+      "detail": "worker claim could not cross its explicit tenant scope",
+      "status": "passed"
+    },
+    {
+      "check": "epoch_fencing",
+      "detail": "observed=DISTRIBUTED_FENCE_REJECTED",
+      "status": "passed"
+    },
+    {
+      "check": "expired_claim_recovery",
+      "detail": "new epoch reclaimed the expired claim without creating a second message",
+      "status": "passed"
+    },
+    {
+      "check": "atomic_inbox_effect",
+      "detail": "inbox receipt, database effect, and delivery status committed atomically",
+      "status": "passed"
+    },
+    {
+      "check": "uncertain_commit_replay",
+      "detail": "post-commit retry returned the original receipt without reapplying the effect",
+      "status": "passed"
+    },
+    {
+      "check": "crash_restart_requeue",
+      "detail": "expired in-flight claim returned to pending after restart",
+      "status": "passed"
+    },
+    {
+      "check": "bounded_dead_letter",
+      "detail": "poison message stopped retrying at its attempt limit",
+      "status": "passed"
+    },
+    {
+      "check": "postgres_claim_contract",
+      "detail": "PostgreSQL plan uses JSONB and non-blocking row claims",
+      "status": "passed"
+    },
+    {
+      "check": "postgres_nonclaim",
+      "detail": "missing local PostgreSQL runtime remains explicit rather than simulated as passed",
+      "status": "passed"
+    }
+  ],
+  "delivered_message_id": "msg_a1663acd356a48f4978d8cb6441031af",
+  "final_epoch": 2,
+  "generated_at": "2026-09-02T03:10:19.087Z",
+  "implementation_source_hash": "sha256:875dc9d5721761f9cbf207b2c8906ef69e97bc3d9ec3e1c696978950f204e5df",
+  "implementation_version": "0.5.0-alpha.4",
+  "postgres_runtime_verified": false,
+  "report_id": "dar_3e3a5f3da658474a986afe16b3b6a865",
+  "schema_version": "0.5.0",
+  "status": "passed"
+}

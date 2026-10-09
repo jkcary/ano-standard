@@ -1,0 +1,21 @@
+{
+  "machine_id": "ano.skill.lifecycle", "schema_version": "0.3.0", "entity_type": "skill", "initial_state": "candidate",
+  "states": ["candidate", "sandbox", "tested", "evaluated", "approved", "staged", "production", "monitored", "revised", "suspended", "rolled_back", "retired", "invalidated"],
+  "terminal_states": ["retired", "invalidated"],
+  "transitions": [
+    {"from": "candidate", "event": "skill.sandboxed", "to": "sandbox", "guards": ["artifact_verified", "permissions_declared"]},
+    {"from": "sandbox", "event": "skill.tested", "to": "tested", "guards": ["functional_tests_passed"]},
+    {"from": "tested", "event": "skill.evaluated", "to": "evaluated", "guards": ["sealed_evals_passed", "guardrails_passed"]},
+    {"from": "evaluated", "event": "skill.approved", "to": "approved", "guards": ["independent_approval"]},
+    {"from": "approved", "event": "skill.staged", "to": "staged", "guards": ["canary_scope_bounded", "rollback_rehearsed"]},
+    {"from": "staged", "event": "skill.promoted", "to": "production", "guards": ["canary_metrics_passed"]},
+    {"from": "production", "event": "skill.monitored", "to": "monitored", "guards": ["monitoring_active"]},
+    {"from": "staged", "event": "skill.rolled_back", "to": "rolled_back", "guards": ["baseline_restored"]},
+    {"from": "production", "event": "skill.rolled_back", "to": "rolled_back", "guards": ["baseline_restored"]},
+    {"from": "monitored", "event": "skill.rolled_back", "to": "rolled_back", "guards": ["baseline_restored"]},
+    {"from": "monitored", "event": "skill.revised", "to": "revised", "guards": ["new_proposal_created"]},
+    {"from": "monitored", "event": "skill.suspended", "to": "suspended", "guards": []},
+    {"from": "rolled_back", "event": "skill.retired", "to": "retired", "guards": []},
+    {"from": "candidate", "event": "skill.invalidated", "to": "invalidated", "guards": ["source_withdrawn"]}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.4.0:tenant-session",
+  "title": "ANO Tenant-Bound Session",
+  "type": "object", "additionalProperties": false,
+  "required": ["session_id", "schema_version", "tenant_id", "principal_id", "issued_at", "expires_at", "token"],
+  "properties": {
+    "session_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.4.0"},
+    "tenant_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "principal_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "issued_at": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"},
+    "expires_at": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"},
+    "token": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"}
+  }
+}

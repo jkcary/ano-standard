@@ -1,0 +1,117 @@
+{
+  "audit_id": "vaa_73cde4ee797c4b6ab462ea10de1d3bc2",
+  "audited_at": "2026-09-02T03:10:20.238Z",
+  "checks": [
+    {
+      "check": "v050_schema_catalog",
+      "detail": "declared=30; files=30",
+      "status": "passed"
+    },
+    {
+      "check": "compat_ano_c",
+      "detail": "tests=151; required=16; failed=0",
+      "status": "passed"
+    },
+    {
+      "check": "compat_ano_p",
+      "detail": "tests=151; required=24; failed=0",
+      "status": "passed"
+    },
+    {
+      "check": "compat_ano_g",
+      "detail": "tests=151; required=42; failed=0",
+      "status": "passed"
+    },
+    {
+      "check": "compat_ano_a",
+      "detail": "tests=151; required=52; failed=0",
+      "status": "passed"
+    },
+    {
+      "check": "compat_ano_s",
+      "detail": "tests=151; required=143; failed=0",
+      "status": "passed"
+    },
+    {
+      "check": "evolution_acceptance",
+      "detail": "status=passed; checks=11",
+      "status": "passed"
+    },
+    {
+      "check": "distributed_acceptance",
+      "detail": "status=passed; checks=11; postgres_runtime=false",
+      "status": "passed"
+    },
+    {
+      "check": "external_trust_acceptance",
+      "detail": "status=passed; checks=13; cloud_runtime=false",
+      "status": "passed"
+    },
+    {
+      "check": "federation_acceptance",
+      "detail": "status=passed; checks=15; network_runtime=false",
+      "status": "passed"
+    },
+    {
+      "check": "roadmap",
+      "detail": "0.5 completion stages and non-claims are declared",
+      "status": "passed"
+    },
+    {
+      "check": "working_specification",
+      "detail": "Alpha.1 through Alpha.4 invariants are specified",
+      "status": "passed"
+    },
+    {
+      "check": "implementation_status",
+      "detail": "implemented Alpha.4 boundary is declared",
+      "status": "passed"
+    },
+    {
+      "check": "version",
+      "detail": "implementation=0.5.0-alpha.4",
+      "status": "passed"
+    },
+    {
+      "check": "v040_compatibility",
+      "detail": "0.4 production-kernel requirements remain cumulative",
+      "status": "passed"
+    },
+    {
+      "check": "model_independent_growth",
+      "detail": "model advancement remains candidate-only under deterministic evolution gates",
+      "status": "passed"
+    }
+  ],
+  "conformance": {
+    "failed": 0,
+    "passed": 150,
+    "profile_passed": 142,
+    "required_tests": 143,
+    "skipped": 1,
+    "tests_run": 151
+  },
+  "implementation_source_hash": "sha256:875dc9d5721761f9cbf207b2c8906ef69e97bc3d9ec3e1c696978950f204e5df",
+  "implementation_version": "0.5.0-alpha.4",
+  "inventory": {
+    "distributed_checks": 11,
+    "evolution_checks": 11,
+    "external_trust_checks": 13,
+    "federation_checks": 15,
+    "profiles": 5,
+    "state_machines": 12,
+    "v030_schemas": 63,
+    "v040_schemas": 23,
+    "v050_schemas": 30
+  },
+  "non_claims": [
+    "not a PostgreSQL or multi-node consensus implementation",
+    "reference KMS and identity emulators are not cloud KMS, HSM, enterprise OIDC or SPIRE deployment certification",
+    "signed provenance policy is not an independent supply-chain security certification",
+    "federation tests use separate local databases and do not certify real multi-host transport or consensus",
+    "not cross-region recovery or long-duration capacity certification",
+    "candidate generation does not authorize unsupervised production self-modification"
+  ],
+  "schema_version": "0.5.0",
+  "status": "passed"
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:event",
+  "title": "ANO Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id", "event_type", "schema_version", "actor_id", "subject_ids",
+    "event_time", "observed_at", "recorded_at", "payload", "epistemic_status",
+    "confidence", "sensitivity", "provenance", "correlation_id", "causation_id"
+  ],
+  "properties": {
+    "event_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "event_type": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*(\\.[a-z][a-z0-9_-]*)+$"},
+    "schema_version": {"const": "0.3.0"},
+    "actor_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "subject_ids": {
+      "type": "array",
+      "items": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+      "uniqueItems": true
+    },
+    "event_time": {
+      "oneOf": [
+        {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+        {"type": "null"}
+      ]
+    },
+    "observed_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "recorded_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "payload": {"type": "object"},
+    "epistemic_status": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/epistemic_status"},
+    "confidence": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/confidence"},
+    "sensitivity": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/sensitivity"},
+    "provenance": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/provenance"},
+    "correlation_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "causation_id": {
+      "oneOf": [
+        {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+        {"type": "null"}
+      ]
+    }
+  }
+}
+

@@ -1,0 +1,1088 @@
+{
+  "claim": {
+    "declared_exceptions": [
+      "C-UNIT-001"
+    ],
+    "failed_tests": [],
+    "implementation_name": "ANO Python Reference Runtime",
+    "implementation_source_hash": "sha256:875dc9d5721761f9cbf207b2c8906ef69e97bc3d9ec3e1c696978950f204e5df",
+    "implementation_version": "0.5.0-alpha.4",
+    "issued_at": "2026-09-02T03:10:18.055Z",
+    "passed_tests": [
+      "A-DATA-001",
+      "A-EVAL-001",
+      "A-GOAL-001",
+      "A-MEM-001",
+      "A-MOD-001",
+      "A-MOD-002",
+      "A-POL-001",
+      "A-RBK-001",
+      "A-REF-001",
+      "A-SKL-001",
+      "C-ACT-001",
+      "C-ACT-002",
+      "C-CON-001",
+      "C-CTRL-001",
+      "C-CTX-001",
+      "C-EVT-001",
+      "C-GOV-001",
+      "C-ID-001",
+      "C-MOD-001",
+      "C-MOD-002",
+      "C-PERM-001",
+      "C-PERM-002",
+      "C-REC-001",
+      "C-STATE-001",
+      "C-VER-001",
+      "D-ADP-001",
+      "D-CON-001",
+      "D-DLQ-001",
+      "D-E2E-001",
+      "D-FEN-001",
+      "D-INB-001",
+      "D-PGC-001",
+      "D-REC-001",
+      "D-TEN-001",
+      "D-TXO-001",
+      "F-BUD-001",
+      "F-BUD-002",
+      "F-E2E-001",
+      "F-LRN-001",
+      "F-LRN-002",
+      "F-OFF-001",
+      "F-POL-001",
+      "F-SLO-001",
+      "F-SLO-002",
+      "F-VIEW-001",
+      "G-A2A-001",
+      "G-APP-001",
+      "G-AUD-001",
+      "G-COST-001",
+      "G-DEG-001",
+      "G-DEL-001",
+      "G-HUM-001",
+      "G-ID-001",
+      "G-INC-001",
+      "G-INJ-001",
+      "G-KEY-001",
+      "G-MOD-001",
+      "G-POL-001",
+      "G-PRIV-001",
+      "G-REV-001",
+      "G-SCOPE-001",
+      "G-SEP-001",
+      "G-SUP-001",
+      "O-ADP-001",
+      "O-BAK-001",
+      "O-CON-001",
+      "O-E2E-001",
+      "O-ENC-001",
+      "O-ENC-002",
+      "O-IDP-001",
+      "O-INT-001",
+      "O-KEY-001",
+      "O-KEY-002",
+      "O-KEY-003",
+      "O-LEASE-001",
+      "O-MIG-001",
+      "O-MIG-002",
+      "O-PORT-001",
+      "O-QUOTA-001",
+      "O-RC-001",
+      "O-SCH-001",
+      "O-SES-001",
+      "O-SLO-001",
+      "O-TEN-001",
+      "O-TXN-001",
+      "P-COM-001",
+      "P-COM-002",
+      "P-LIVE-001",
+      "P-LOOP-001",
+      "P-MEM-001",
+      "P-MEM-002",
+      "P-SCH-001",
+      "P-TIME-001",
+      "S-CAN-001",
+      "S-CTL-001",
+      "S-EQUIV-001",
+      "S-EVAL-001",
+      "S-GOSSIP-001",
+      "S-HSBX-001",
+      "S-INDEP-001",
+      "S-K8S-001",
+      "S-KROT-001",
+      "S-LAB-001",
+      "S-MTLS-001",
+      "S-MVP-001",
+      "S-OBS-001",
+      "S-OSRC-001",
+      "S-PKI-001",
+      "S-PRIV-001",
+      "S-QARC-001",
+      "S-QNET-001",
+      "S-QUORUM-001",
+      "S-RBK-001",
+      "S-REC-001",
+      "S-RTEL-001",
+      "S-SBX-001",
+      "S-SEP-001",
+      "S-SIG-001",
+      "S-TEL-001",
+      "S-WIT-001",
+      "S-WORM-001",
+      "S-XREC-001",
+      "S-XWIT-001",
+      "T-E2E-001",
+      "T-KMS-001",
+      "T-KMS-002",
+      "T-KMS-003",
+      "T-OIDC-001",
+      "T-SEC-001",
+      "T-SEC-002",
+      "T-SPIFFE-001",
+      "T-SUP-001",
+      "T-SUP-002",
+      "V-E2E-001",
+      "V-EVO-001",
+      "V-FEN-001",
+      "V-INT-001",
+      "V-MOD-001",
+      "V-PKG-001",
+      "V-RBK-001",
+      "V-REC-001",
+      "V-SCH-001"
+    ],
+    "profile": "ANO-S",
+    "specification": "ANO",
+    "specification_version": "0.3.0",
+    "status": "conformant",
+    "test_suite_version": "0.5.0-alpha.4"
+  },
+  "duration_seconds": 17.37872,
+  "environment": {
+    "platform": "Windows-11-10.0.22631-SP0",
+    "python": "3.14.0"
+  },
+  "finished_at": "2026-09-02T03:10:18.055Z",
+  "report_schema": "urn:ano:report:conformance:0.5.0-alpha.4",
+  "results": [
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_adaptive.AdaptiveProfileConformanceTests.test_withdrawn_malicious_source_invalidates_all_derived_asset_types",
+      "test_id": "A-DATA-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_adaptive.AdaptiveProfileConformanceTests.test_candidate_cannot_read_holdout_answers_or_lower_sealed_threshold",
+      "test_id": "A-EVAL-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_adaptive.AdaptiveProfileConformanceTests.test_candidate_cannot_claim_improvement_by_lowering_goal_criteria",
+      "test_id": "A-GOAL-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_adaptive.AdaptiveProfileConformanceTests.test_sensitive_source_without_learning_consent_cannot_enter_long_term_memory",
+      "test_id": "A-MEM-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_adaptive.AdaptiveProfileConformanceTests.test_new_model_capability_is_evaluated_mapped_and_only_generates_candidate_orchestration",
+      "test_id": "A-MOD-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_adaptive.AdaptiveProfileConformanceTests.test_model_leap_reports_architecture_leverage_ratio_and_guardrails",
+      "test_id": "A-MOD-002"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_adaptive.AdaptiveProfileConformanceTests.test_candidate_policy_passes_signed_baseline_safety_and_cost_gates",
+      "test_id": "A-POL-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_adaptive.AdaptiveProfileConformanceTests.test_skill_regression_rolls_behavior_and_state_back_to_signed_baseline",
+      "test_id": "A-RBK-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_adaptive.AdaptiveProfileConformanceTests.test_reflection_creates_candidate_proposal_without_mutating_production",
+      "test_id": "A-REF-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_adaptive.AdaptiveProfileConformanceTests.test_skill_lifecycle_keeps_artifact_permission_eval_approval_and_monitoring_chain",
+      "test_id": "A-SKL-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_runtime.ActionRuntimeConformanceTests.test_completed_action_has_auditable_transition_chain",
+      "test_id": "C-ACT-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_runtime.ActionRuntimeConformanceTests.test_unknown_side_effect_is_not_blindly_retried",
+      "test_id": "C-ACT-002"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_state_machines.StateMachineConformanceTests.test_action_cannot_jump_from_proposed_to_completed",
+      "test_id": "C-ACT-003"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_state_machines.StateMachineConformanceTests.test_action_authorization_requires_all_guards",
+      "test_id": "C-ACT-004"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_runtime.ActionRuntimeConformanceTests.test_revocation_wins_before_execution",
+      "test_id": "C-CON-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_runtime.ActionRuntimeConformanceTests.test_kill_switch_blocks_new_action_without_model",
+      "test_id": "C-CTRL-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_schemas.SchemaConformanceTests.test_decision_context_contains_required_versions",
+      "test_id": "C-CTX-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_event_store.EventStoreConformanceTests.test_correction_appends_without_overwriting_original",
+      "test_id": "C-EVT-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_event_store.EventStoreConformanceTests.test_duplicate_event_identifier_is_rejected",
+      "test_id": "C-EVT-002"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_schemas.SchemaConformanceTests.test_unknown_governance_fields_are_rejected",
+      "test_id": "C-GOV-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_schemas.SchemaConformanceTests.test_identity_is_externalized_and_versioned",
+      "test_id": "C-ID-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_state_machines.StateMachineConformanceTests.test_terminated_identity_is_terminal",
+      "test_id": "C-ID-002"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_models.ModelIndependenceConformanceTests.test_model_switch_preserves_external_identity_and_state",
+      "test_id": "C-MOD-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_models.ModelIndependenceConformanceTests.test_model_failure_selects_approved_fallback_or_none",
+      "test_id": "C-MOD-002"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_runtime.ActionRuntimeConformanceTests.test_missing_grant_fails_closed",
+      "test_id": "C-PERM-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_runtime.ActionRuntimeConformanceTests.test_parameter_change_after_decision_is_rejected",
+      "test_id": "C-PERM-002"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_runtime.ActionRuntimeConformanceTests.test_resource_outside_scope_is_rejected",
+      "test_id": "C-PERM-003"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_runtime.ActionRuntimeConformanceTests.test_completed_side_effect_is_not_repeated_after_restart",
+      "test_id": "C-REC-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_schemas.SchemaConformanceTests.test_all_schemas_are_valid_draft_2020_12",
+      "test_id": "C-SCHEMA-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_schemas.SchemaConformanceTests.test_all_examples_validate",
+      "test_id": "C-SCHEMA-002"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_state_machines.StateMachineConformanceTests.test_machine_definitions_are_valid_and_unambiguous",
+      "test_id": "C-SM-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_event_store.EventStoreConformanceTests.test_projection_is_rebuilt_from_event_order",
+      "test_id": "C-STATE-001"
+    },
+    {
+      "detail": "conditional: reference runtime exposes no physical or financial action profile",
+      "status": "skipped",
+      "test_case": "tests.test_models.ModelIndependenceConformanceTests.test_high_impact_domain_values_require_units",
+      "test_id": "C-UNIT-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_runtime.ActionRuntimeConformanceTests.test_action_success_does_not_complete_goal",
+      "test_id": "C-VER-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_distributed.DistributedDeliveryTests.test_adapter_contract_and_capabilities_do_not_overclaim_multihost",
+      "test_id": "D-ADP-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_distributed.DistributedDeliveryTests.test_concurrent_claimers_observe_at_most_one_claim",
+      "test_id": "D-CON-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_distributed.DistributedDeliveryTests.test_poison_message_moves_to_dead_letter_after_bounded_attempts",
+      "test_id": "D-DLQ-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_distributed.DistributedDeliveryTests.test_one_command_distributed_demo_emits_machine_valid_report",
+      "test_id": "D-E2E-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_distributed.DistributedDeliveryTests.test_new_epoch_fences_partitioned_worker_and_reclaims_expired_message",
+      "test_id": "D-FEN-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_distributed.DistributedDeliveryTests.test_inbox_and_effect_are_exactly_once_for_database_side_effects",
+      "test_id": "D-INB-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_distributed.DistributedDeliveryTests.test_postgres_plan_uses_skip_locked_and_remains_explicitly_unverified",
+      "test_id": "D-PGC-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_distributed.DistributedDeliveryTests.test_restart_requeues_expired_claim_without_losing_message",
+      "test_id": "D-REC-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_distributed.DistributedDeliveryTests.test_claim_requires_explicit_tenant_scope",
+      "test_id": "D-TEN-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_distributed.DistributedDeliveryTests.test_operation_and_outbox_commit_atomically_and_replay_original_messages",
+      "test_id": "D-TXO-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_federation.FederatedGrowthTests.test_budget_authority_is_idempotent_and_enforces_global_tenant_and_node_binding",
+      "test_id": "F-BUD-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_federation.FederatedGrowthTests.test_concurrent_tenants_cannot_overallocate_global_capacity",
+      "test_id": "F-BUD-002"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_federation.FederatedGrowthTests.test_one_command_federation_demo_emits_machine_valid_report",
+      "test_id": "F-E2E-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_federation.FederatedGrowthTests.test_signed_source_withdrawal_invalidates_assets_on_every_required_node",
+      "test_id": "F-LRN-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_federation.FederatedGrowthTests.test_incomplete_forged_and_stale_withdrawal_propagation_fails_closed",
+      "test_id": "F-LRN-002"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_federation.FederatedGrowthTests.test_offline_node_must_replay_every_signed_epoch_before_joining_current_view",
+      "test_id": "F-OFF-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_federation.FederatedGrowthTests.test_signed_policy_and_capability_view_reaches_independent_node_quorum",
+      "test_id": "F-POL-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_federation.FederatedGrowthTests.test_signed_multinode_error_budget_degrades_then_requires_stable_recovery",
+      "test_id": "F-SLO-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_federation.FederatedGrowthTests.test_missing_forged_or_replayed_slo_evidence_cannot_trigger_normal_mode",
+      "test_id": "F-SLO-002"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_federation.FederatedGrowthTests.test_epoch_equivocation_history_gap_and_checkpoint_divergence_fail_closed",
+      "test_id": "F-VIEW-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_governance.GovernedProfileConformanceTests.test_delegation_revocation_propagates_and_unconfirmed_nodes_become_unknown",
+      "test_id": "G-A2A-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_governance.GovernedProfileConformanceTests.test_corrected_data_reopens_and_changes_affected_decision",
+      "test_id": "G-APP-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_governance.GovernedProfileConformanceTests.test_audit_chain_is_queryable_and_detects_tampering",
+      "test_id": "G-AUD-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_governance.GovernedProfileConformanceTests.test_child_tasks_share_root_budget_and_cannot_bypass_circuit_breaker",
+      "test_id": "G-COST-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_governance.GovernedProfileConformanceTests.test_coordination_failure_and_stale_leader_fail_safe",
+      "test_id": "G-DEG-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_governance.GovernedProfileConformanceTests.test_deletion_propagates_to_all_copy_types_and_reports_unconfirmed_target",
+      "test_id": "G-DEL-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_governance.GovernedProfileConformanceTests.test_informed_confirmation_exposes_material_terms_and_binds_parameters",
+      "test_id": "G-HUM-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_governance.GovernedProfileConformanceTests.test_identity_fork_gets_new_identity_without_credentials_permissions_or_commitments",
+      "test_id": "G-ID-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_governance.GovernedProfileConformanceTests.test_incident_response_continues_without_model_and_preserves_evidence",
+      "test_id": "G-INC-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_governance.GovernedProfileConformanceTests.test_external_prompt_injection_cannot_create_governance_permission",
+      "test_id": "G-INJ-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_governance.GovernedProfileConformanceTests.test_single_actor_cannot_take_over_identity_root",
+      "test_id": "G-KEY-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_governance.GovernedProfileConformanceTests.test_model_upgrade_does_not_expand_permissions_budget_or_data_scope",
+      "test_id": "G-MOD-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_governance.GovernedProfileConformanceTests.test_higher_denial_wins_and_unresolved_conflict_fails_closed",
+      "test_id": "G-POL-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_governance.GovernedProfileConformanceTests.test_subject_export_is_complete_and_delete_clears_derived_data",
+      "test_id": "G-PRIV-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_governance.GovernedProfileConformanceTests.test_revocation_cancels_not_started_and_escalates_inflight_actions",
+      "test_id": "G-REV-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_governance.GovernedProfileConformanceTests.test_delegation_cannot_expand_capability_resource_or_data_scope",
+      "test_id": "G-SCOPE-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_governance.GovernedProfileConformanceTests.test_high_risk_proposer_cannot_be_sole_or_nonindependent_approver",
+      "test_id": "G-SEP-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_governance.GovernedProfileConformanceTests.test_untrusted_or_digest_mismatched_artifact_cannot_deploy",
+      "test_id": "G-SUP-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_migration.TenantMigrationAndBackupTests.test_sqlite_implements_portable_adapter_contract_without_multinode_overclaim",
+      "test_id": "O-ADP-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_migration.TenantMigrationAndBackupTests.test_online_backup_restores_encrypted_database_and_rejects_changed_content",
+      "test_id": "O-BAK-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_tenant_storage.TransactionalTenantStorageTests.test_simultaneous_writers_commit_exactly_one_version",
+      "test_id": "O-CON-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_tenant_storage.TransactionalTenantStorageTests.test_storage_demo_emits_machine_valid_acceptance_report",
+      "test_id": "O-E2E-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_key_management.TenantKeyManagementTests.test_payload_is_ciphertext_at_rest_and_authenticated_on_read",
+      "test_id": "O-ENC-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_key_management.TenantKeyManagementTests.test_ciphertext_cannot_be_substituted_between_object_scopes",
+      "test_id": "O-ENC-002"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_operations.ProductionOperationsTests.test_external_signed_identity_is_verified_consumed_once_and_tenant_bound",
+      "test_id": "O-IDP-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_tenant_storage.TransactionalTenantStorageTests.test_state_and_idempotency_rows_are_rebound_to_audit_events_on_read",
+      "test_id": "O-INT-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_key_management.TenantKeyManagementTests.test_data_and_master_key_rotation_preserve_decryption",
+      "test_id": "O-KEY-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_key_management.TenantKeyManagementTests.test_crypto_shredding_is_tenant_scoped_and_irreversible",
+      "test_id": "O-KEY-002"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_key_management.TenantKeyManagementTests.test_encrypted_store_requires_the_matching_key_database",
+      "test_id": "O-KEY-003"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_operations.ProductionOperationsTests.test_expired_lease_holder_is_fenced_by_monotonic_token",
+      "test_id": "O-LEASE-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_migration.TenantMigrationAndBackupTests.test_encrypted_export_import_preserves_state_history_and_idempotency",
+      "test_id": "O-MIG-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_migration.TenantMigrationAndBackupTests.test_import_rejects_wrong_key_tamper_scope_and_nonempty_target",
+      "test_id": "O-MIG-002"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_tenant_storage.TransactionalTenantStorageTests.test_tenant_audit_chain_detects_tamper_and_export_is_self_verifying",
+      "test_id": "O-PORT-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_operations.ProductionOperationsTests.test_quota_consumption_is_atomic_idempotent_and_tenant_scoped",
+      "test_id": "O-QUOTA-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_operations.ProductionOperationsTests.test_production_kernel_demo_emits_machine_valid_acceptance",
+      "test_id": "O-RC-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_tenant_storage.TransactionalTenantStorageTests.test_v040_schema_catalog_is_complete_and_valid",
+      "test_id": "O-SCH-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_tenant_storage.TransactionalTenantStorageTests.test_expired_session_is_rejected_before_storage_access",
+      "test_id": "O-SES-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_operations.ProductionOperationsTests.test_slo_reports_are_windowed_and_tenant_scoped",
+      "test_id": "O-SLO-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_tenant_storage.TransactionalTenantStorageTests.test_tenant_sessions_prevent_cross_tenant_reads_and_forgery",
+      "test_id": "O-TEN-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_tenant_storage.TransactionalTenantStorageTests.test_optimistic_transactions_and_idempotency_fail_closed",
+      "test_id": "O-TXN-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_persistence.PersistentProfileConformanceTests.test_commitment_survives_restart_and_continues_scheduling_once",
+      "test_id": "P-COM-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_persistence.PersistentProfileConformanceTests.test_breach_is_forecast_before_deadline_without_false_completion",
+      "test_id": "P-COM-002"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_persistence.PersistentProfileConformanceTests.test_aging_prevents_starvation_and_capacity_applies_backpressure",
+      "test_id": "P-LIVE-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_persistence.PersistentProfileConformanceTests.test_recursion_and_fanout_are_bounded",
+      "test_id": "P-LOOP-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_persistence.PersistentProfileConformanceTests.test_conflicting_memories_remain_disputed_with_visible_reason",
+      "test_id": "P-MEM-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_persistence.PersistentProfileConformanceTests.test_deleted_memory_content_does_not_reappear_after_restart",
+      "test_id": "P-MEM-002"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_persistence.PersistentProfileConformanceTests.test_restarted_scheduler_suppresses_duplicate_trigger",
+      "test_id": "P-SCH-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_persistence.PersistentProfileConformanceTests.test_event_and_observation_time_are_queried_independently",
+      "test_id": "P-TIME-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_self_modifying.SelfModifyingProfileConformanceTests.test_canary_enforces_identity_traffic_permission_data_and_budget_scope",
+      "test_id": "S-CAN-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_control_plane.ControlPlaneConformanceTests.test_external_canary_compensates_route_and_deployment_on_regression_or_scope_violation",
+      "test_id": "S-CTL-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_observation.IndependentObservationConformanceTests.test_source_registry_persists_signed_equivocation_and_detects_tamper_or_truncation",
+      "test_id": "S-EQUIV-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_self_modifying.SelfModifyingProfileConformanceTests.test_structural_patch_cannot_modify_baseline_thresholds_or_judge",
+      "test_id": "S-EVAL-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_observation.IndependentObservationConformanceTests.test_signed_checkpoints_prove_consistent_growth_and_expose_split_views",
+      "test_id": "S-GOSSIP-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_hardening.ProductionHardeningConformanceTests.test_attested_sandbox_fails_closed_before_unverified_backend_execution",
+      "test_id": "S-HSBX-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_observation.IndependentObservationConformanceTests.test_distinct_urls_do_not_count_when_control_infrastructure_or_upstream_is_shared",
+      "test_id": "S-INDEP-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_control_plane.ControlPlaneConformanceTests.test_kubernetes_adapter_is_digest_pinned_least_privilege_and_dry_run_by_default",
+      "test_id": "S-K8S-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_witness_policy.WitnessKeyLifecycleConformanceTests.test_rotation_validity_fingerprint_and_revocation_are_fail_closed",
+      "test_id": "S-KROT-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_cluster_lab.ClusterLabConformanceTests.test_cluster_evidence_requires_all_scenarios_and_verified_cleanup",
+      "test_id": "S-LAB-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_mtls_witness.MutualTlsWitnessConformanceTests.test_service_requires_trusted_client_certificate_and_client_verifies_server",
+      "test_id": "S-MTLS-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_mvp_demo.MvpEndToEndConformanceTests.test_one_command_mvp_demo_closes_governed_growth_and_transparency_loop",
+      "test_id": "S-MVP-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_observation.IndependentObservationConformanceTests.test_quorum_requires_verifiable_distinct_source_lineage",
+      "test_id": "S-OBS-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_observation_network.IndependentObservationNetworkTests.test_observers_fetch_independent_sources_and_reject_source_failure_or_divergence",
+      "test_id": "S-OSRC-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_control_plane.ControlPlaneConformanceTests.test_ed25519_approval_cannot_be_forged_by_public_key_holder",
+      "test_id": "S-PKI-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_self_modifying.SelfModifyingProfileConformanceTests.test_candidate_cannot_gain_permissions_not_explicitly_approved",
+      "test_id": "S-PRIV-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_quorum_evidence.WitnessQuorumConformanceTests.test_quorum_ledger_preserves_rotated_member_chains_and_detects_tamper_or_truncation",
+      "test_id": "S-QARC-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_quorum_network.WitnessQuorumNetworkConformanceTests.test_two_of_three_remains_available_when_one_independent_service_is_down",
+      "test_id": "S-QNET-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_quorum_evidence.WitnessQuorumConformanceTests.test_threshold_counts_independent_members_not_keys_and_rejects_policy_attacks",
+      "test_id": "S-QUORUM-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_self_modifying.SelfModifyingProfileConformanceTests.test_guardrail_regression_automatically_restores_verified_baseline",
+      "test_id": "S-RBK-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_hardening.ProductionHardeningConformanceTests.test_restart_recovers_unsafe_running_canary_and_rolls_back",
+      "test_id": "S-REC-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_control_plane.ControlPlaneConformanceTests.test_remote_telemetry_rejects_tamper_replay_and_sequence_gap",
+      "test_id": "S-RTEL-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_self_modifying.SelfModifyingProfileConformanceTests.test_structural_candidate_cannot_access_production_data_credentials_or_network",
+      "test_id": "S-SBX-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_self_modifying.SelfModifyingProfileConformanceTests.test_structural_proposer_cannot_be_sole_approver",
+      "test_id": "S-SEP-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_hardening.ProductionHardeningConformanceTests.test_production_canary_rejects_tampered_approval_evidence",
+      "test_id": "S-SIG-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_hardening.ProductionHardeningConformanceTests.test_unsafe_telemetry_is_durable_before_verified_rollback",
+      "test_id": "S-TEL-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_evidence.WitnessedEvidenceConformanceTests.test_independent_type_bound_witness_rejects_forgery_rebinding_and_self_witness",
+      "test_id": "S-WIT-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_evidence.WitnessedEvidenceConformanceTests.test_ledger_rejects_replay_tamper_and_externally_anchored_truncation",
+      "test_id": "S-WORM-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_external_witness.ExternalWitnessServiceConformanceTests.test_external_witness_restart_continues_chain_and_rejects_corrupt_state",
+      "test_id": "S-XREC-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_external_witness.ExternalWitnessServiceConformanceTests.test_external_process_requires_auth_and_idempotently_returns_verified_envelope",
+      "test_id": "S-XWIT-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_external_trust.ExternalTrustPlaneTests.test_one_command_external_trust_demo_emits_machine_valid_report",
+      "test_id": "T-E2E-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_external_trust.ExternalTrustPlaneTests.test_remote_kms_contract_is_truthful_about_cloud_and_hsm_boundary",
+      "test_id": "T-KMS-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_external_trust.ExternalTrustPlaneTests.test_kms_rejects_caller_purpose_context_and_ciphertext_substitution",
+      "test_id": "T-KMS-002"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_external_trust.ExternalTrustPlaneTests.test_remote_rewrap_preserves_plaintext_and_binds_old_and_new_envelopes",
+      "test_id": "T-KMS-003"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_external_trust.ExternalTrustPlaneTests.test_oidc_jwks_verification_rejects_replay_algorithm_attack_and_stale_keys",
+      "test_id": "T-OIDC-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_external_trust.ExternalTrustPlaneTests.test_secret_lease_is_short_lived_purpose_audience_subject_and_redemption_bound",
+      "test_id": "T-SEC-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_external_trust.ExternalTrustPlaneTests.test_revocation_and_leak_detection_persistently_disable_secret_lease",
+      "test_id": "T-SEC-002"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_external_trust.ExternalTrustPlaneTests.test_spiffe_identity_is_bound_to_trust_domain_and_workload_selectors",
+      "test_id": "T-SPIFFE-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_external_trust.ExternalTrustPlaneTests.test_signed_provenance_binds_artifact_sbom_source_builder_and_materials",
+      "test_id": "T-SUP-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_external_trust.ExternalTrustPlaneTests.test_supply_chain_policy_rejects_substitution_mutable_source_and_weak_build",
+      "test_id": "T-SUP-002"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_evolution.PersistentEvolutionKernelTests.test_one_command_evolution_demo_emits_machine_valid_report",
+      "test_id": "V-E2E-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_evolution.PersistentEvolutionKernelTests.test_evaluation_approval_stage_and_activation_order_is_enforced",
+      "test_id": "V-EVO-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_evolution.PersistentEvolutionKernelTests.test_competing_upgrades_commit_at_most_one_active_baseline",
+      "test_id": "V-FEN-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_evolution.PersistentEvolutionKernelTests.test_transaction_projection_is_rebound_to_package_and_latest_event",
+      "test_id": "V-INT-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_evolution.PersistentEvolutionKernelTests.test_model_advancement_builds_only_a_candidate_package",
+      "test_id": "V-MOD-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_evolution.PersistentEvolutionKernelTests.test_package_signature_generation_permissions_and_budget_fail_closed",
+      "test_id": "V-PKG-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_evolution.PersistentEvolutionKernelTests.test_rollback_restores_signed_baseline_and_log_detects_tamper",
+      "test_id": "V-RBK-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_evolution.PersistentEvolutionKernelTests.test_restart_preserves_staged_transaction_without_auto_activation",
+      "test_id": "V-REC-001"
+    },
+    {
+      "detail": null,
+      "status": "passed",
+      "test_case": "tests.test_evolution.PersistentEvolutionKernelTests.test_v050_schema_catalog_is_complete_and_valid",
+      "test_id": "V-SCH-001"
+    }
+  ],
+  "started_at": "2026-09-02T03:10:00.677Z",
+  "summary": {
+    "failed": 0,
+    "invalid_skips": [],
+    "missing_required_tests": [],
+    "passed": 150,
+    "profile_passed": 142,
+    "required_tests": 143,
+    "skipped": 1,
+    "suite_failed": 0,
+    "tests_run": 151
+  }
+}

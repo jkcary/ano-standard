@@ -1,0 +1,5 @@
+{
+  "incident_id": "inc_demo_001", "schema_version": "0.3.0", "version": 1, "severity": "critical", "owner_id": "security_owner",
+  "detected_at": "2026-08-27T17:00:00Z", "affected_identity_ids": ["ano_demo_001"], "affected_data_refs": ["memory_partition_1"],
+  "affected_action_ids": [], "timeline": [], "evidence_refs": [], "containment_actions": [], "notifications": [], "status": "detected"
+}

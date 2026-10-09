@@ -1,0 +1,5 @@
+{
+  "metrics_id": "lev_demo_001", "schema_version": "0.3.0", "advancement_id": "madv_demo_001", "base_model_eval_gain": 0.20,
+  "end_to_end_goal_success_gain": 0.34, "architecture_leverage_ratio": 1.70, "newly_unlocked_system_capabilities": 4,
+  "skills_improved": 12, "skills_retired": 3, "cost_per_success_delta": -0.18, "safety_regression_count": 0, "measured_at": "2026-08-27T17:00:00Z"
+}

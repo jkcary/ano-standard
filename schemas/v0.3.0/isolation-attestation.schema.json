@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:isolation-attestation",
+  "title": "ANO Isolation Attestation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["attestation_id", "schema_version", "artifact_hash", "backend_id", "controls", "issued_at", "expires_at", "issuer", "key_id", "signature"],
+  "properties": {
+    "attestation_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.3.0"},
+    "artifact_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"},
+    "backend_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "controls": {
+      "type": "object", "additionalProperties": false,
+      "required": ["process_isolation", "network", "filesystem", "credentials", "resource_limits", "audit"],
+      "properties": {
+        "process_isolation": {"enum": ["container", "virtual_machine", "dedicated_worker"]},
+        "network": {"enum": ["none", "allowlist", "unrestricted"]},
+        "filesystem": {"enum": ["ephemeral_read_only_root", "ephemeral_writable_root", "host"]},
+        "credentials": {"enum": ["none", "scoped", "host"]},
+        "resource_limits": {"type": "boolean"},
+        "audit": {"enum": ["complete", "partial", "none"]}
+      }
+    },
+    "issued_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "expires_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "issuer": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "key_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "signature": {"type": "string", "pattern": "^(hmac-sha256:[a-f0-9]{64}|ed25519:[A-Za-z0-9+/]{86}==)$"}
+  }
+}

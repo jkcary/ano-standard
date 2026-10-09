@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.4.0:production-kernel-report",
+  "title": "ANO 0.4 Production Kernel Acceptance Report",
+  "type": "object", "additionalProperties": false,
+  "required": ["report_id", "schema_version", "implementation_version", "implementation_source_hash", "generated_at", "status", "checks", "audit_head_hash", "migration_package_hash", "backup_hash", "slo_status"],
+  "properties": {
+    "report_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.4.0"},
+    "implementation_version": {"type": "string", "minLength": 1},
+    "implementation_source_hash": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"},
+    "generated_at": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"},
+    "status": {"enum": ["passed", "failed"]},
+    "checks": {
+      "type": "array", "minItems": 10,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["check", "status", "detail"],
+        "properties": {
+          "check": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+          "status": {"enum": ["passed", "failed"]},
+          "detail": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "audit_head_hash": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"},
+    "migration_package_hash": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"},
+    "backup_hash": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"},
+    "slo_status": {"enum": ["met", "violated"]}
+  }
+}

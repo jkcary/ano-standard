@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:ano:schema:0.3.0:model-leverage-metrics", "title": "ANO Model Leverage Metrics",
+  "type": "object", "additionalProperties": false,
+  "required": ["metrics_id", "schema_version", "advancement_id", "base_model_eval_gain", "end_to_end_goal_success_gain", "architecture_leverage_ratio", "newly_unlocked_system_capabilities", "skills_improved", "skills_retired", "cost_per_success_delta", "safety_regression_count", "measured_at"],
+  "properties": {
+    "metrics_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "schema_version": {"const": "0.3.0"}, "advancement_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "base_model_eval_gain": {"type": "number"}, "end_to_end_goal_success_gain": {"type": "number"}, "architecture_leverage_ratio": {"type": "number", "minimum": 0}, "newly_unlocked_system_capabilities": {"type": "integer", "minimum": 0}, "skills_improved": {"type": "integer", "minimum": 0}, "skills_retired": {"type": "integer", "minimum": 0}, "cost_per_success_delta": {"type": "number"}, "safety_regression_count": {"type": "integer", "minimum": 0}, "measured_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"}
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "conformance_anchor": {
+    "failed": 0,
+    "profile": "ANO-S",
+    "profile_passed": 89,
+    "report_hash": "sha256:aa754e5d52193aecb075b36b252109517b9616ef99b1b58d5c801fdf377af20f",
+    "required_tests": 90,
+    "skipped": 1
+  },
+  "generated_at": "2026-09-01T08:19:39.599Z",
+  "implementation_version": "0.4.0-alpha.1",
+  "negative_controls": [
+    {
+      "control": "resource_scope_escape",
+      "expected_error": "POLICY_DENIED",
+      "observed_error": "POLICY_DENIED",
+      "status": "passed"
+    },
+    {
+      "control": "checkpoint_rollback",
+      "expected_error": "TRANSPARENCY_ROLLBACK",
+      "observed_error": "TRANSPARENCY_ROLLBACK",
+      "status": "passed"
+    }
+  ],
+  "report_id": "mvp_dfc09de979be46008c46a0397f46b043",
+  "schema_version": "0.3.0",
+  "stages": [
+    {
+      "evidence": {
+        "action_id": "act_demo_001",
+        "event_chain": [
+          "action.validated",
+          "action.authorized",
+          "action.execution_started",
+          "action.executed",
+          "action.observed",
+          "action.verified",
+          "action.completed"
+        ],
+        "event_count": 7,
+        "final_status": "completed",
+        "verified": true
+      },
+      "stage": "governed_action",
+      "status": "passed"
+    },
+    {
+      "evidence": {
+        "production_mutated": false,
+        "proposal_id": "chg_b0a4f9229baa4d4abbcc09f89ae34a1e",
+        "proposal_status": "proposed",
+        "reflection_id": "ref_3c346e9d0a17481dac1f0f0576aa1900",
+        "reflection_status": "proposal_generated"
+      },
+      "stage": "reflection_candidate",
+      "status": "passed"
+    },
+    {
+      "evidence": {
+        "advancement_id": "madv_ed1d267e7e394450ae68ed47e124e639",
+        "affected_system_capabilities": [
+          "commitment_recovery",
+          "project_planning"
+        ],
+        "candidate_only": true,
+        "candidate_orchestration_ids": [
+          "orch_commitment_recovery",
+          "orch_project_planning"
+        ],
+        "capability_edges": 2,
+        "discovered_capabilities": [
+          "long_horizon_tool_use"
+        ]
+      },
+      "stage": "model_advancement",
+      "status": "passed"
+    },
+    {
+      "evidence": {
+        "head_hash": "sha256:c07f713ad2988bcd83bdcbd760264672a594475f0587fc4e340a07a1c939c353",
+        "log_id": "transparency_log_mvp",
+        "log_policy_hash": "sha256:250e78374fdd3018b53087df68e519d91d5bc1aff75adfa1ee149cb0742e8dfb",
+        "registry_id": "source_registry_mvp",
+        "sequence": 2,
+        "source_policy_hash": "sha256:cf1bb0dce3c24a06e10cb570b99292346288c8f39e9a98e498e7ce60bc203a50"
+      },
+      "stage": "source_transparency",
+      "status": "passed"
+    }
+  ],
+  "status": "passed"
+}

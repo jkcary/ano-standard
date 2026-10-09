@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.4.0:tenant-key-rotation-receipt",
+  "title": "ANO Tenant Key Rotation Receipt",
+  "type": "object", "additionalProperties": false,
+  "required": ["rotation_id", "schema_version", "tenant_id", "old_key_version", "new_key_version", "rotated_at", "kms_master_key_version"],
+  "properties": {
+    "rotation_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.4.0"},
+    "tenant_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "old_key_version": {"type": "integer", "minimum": 1},
+    "new_key_version": {"type": "integer", "minimum": 2},
+    "rotated_at": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"},
+    "kms_master_key_version": {"type": "integer", "minimum": 1}
+  }
+}

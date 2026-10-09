@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:commitment",
+  "title": "ANO Commitment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "commitment_id", "schema_version", "version", "promisor_id", "beneficiary_id",
+    "intent", "source_event_id", "due_at", "timezone", "trigger", "completion_condition",
+    "escalation_policy_id", "priority", "status", "requires_followup"
+  ],
+  "properties": {
+    "commitment_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.3.0"},
+    "version": {"type": "integer", "minimum": 1},
+    "promisor_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "beneficiary_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "intent": {"type": "string", "minLength": 1, "maxLength": 2048},
+    "source_event_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "due_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "timezone": {"type": "string", "minLength": 1, "maxLength": 64},
+    "trigger": {"$ref": "urn:ano:schema:0.3.0:schedule#/$defs/trigger"},
+    "completion_condition": {
+      "type": "object", "minProperties": 1,
+      "required": ["type"],
+      "properties": {"type": {"type": "string", "minLength": 1}}
+    },
+    "escalation_policy_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "priority": {"enum": ["low", "normal", "high", "critical"]},
+    "status": {"enum": ["proposed", "accepted", "scheduled", "active", "executed", "verified", "completed", "blocked", "failed", "expired", "cancelled"]},
+    "requires_followup": {"type": "boolean"}
+  }
+}

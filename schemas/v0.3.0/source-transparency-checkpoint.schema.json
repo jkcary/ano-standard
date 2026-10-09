@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:source-transparency-checkpoint",
+  "title": "ANO Source Transparency Checkpoint",
+  "type": "object", "additionalProperties": false,
+  "required": ["checkpoint_id", "schema_version", "registry_id", "log_id", "sequence", "head_hash", "issued_at"],
+  "properties": {
+    "checkpoint_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.3.0"},
+    "registry_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "log_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "sequence": {"type": "integer", "minimum": 1},
+    "head_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"},
+    "issued_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"}
+  }
+}

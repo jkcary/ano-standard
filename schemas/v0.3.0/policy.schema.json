@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:policy",
+  "title": "ANO Governance Policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["policy_id", "schema_version", "version", "source_level", "priority", "scope", "effect", "reason_codes", "valid_from", "expires_at", "status"],
+  "properties": {
+    "policy_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.3.0"},
+    "version": {"type": "integer", "minimum": 1},
+    "source_level": {"enum": ["hard_safety", "law", "principal_denial", "organization", "permission_grant", "preference", "model_recommendation"]},
+    "priority": {"type": "integer", "minimum": 0, "maximum": 1000},
+    "scope": {"type": "object"},
+    "effect": {"enum": ["allow", "deny", "require_approval"]},
+    "reason_codes": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/reason_codes"},
+    "valid_from": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "expires_at": {"oneOf": [{"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"}, {"type": "null"}]},
+    "status": {"enum": ["draft", "active", "expired", "revoked"]}
+  }
+}

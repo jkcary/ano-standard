@@ -1,0 +1,60 @@
+{
+  "cleanup": {
+    "attempted": true,
+    "verified": true
+  },
+  "context": "kind-ano-alpha8",
+  "finished_at": "2026-08-28T06:23:55.146Z",
+  "harness_version": "0.3.0-alpha.8",
+  "image_ref": "busybox@sha256:73aaf090f3d85aa34ee199857f03fa3a95c8ede2ffd4cc2cdb5b94e566b11662",
+  "environment": {
+    "cluster_type": "kind",
+    "cluster_runtime_version": "v0.33.0",
+    "kubernetes_version": "v1.34.3",
+    "network_policy_provider": "calico",
+    "network_policy_version": "v3.31.6",
+    "network_policy_manifest_sha256": "sha256:34012557637766d4367f0e7d2ea8b6507fca6df68e08b87fcdcd527f689e2637"
+  },
+  "namespace": "ano-alpha8-6da65eca",
+  "run_id": "lab_6da65eca",
+  "scenarios": [
+    {
+      "evidence": "Waiting for deployment \"ano-can-alpha8-6da65eca\" rollout to finish: 0 of 1 updated replicas are available...\ndeployment \"ano-can-alpha8-6da65eca\" successfully rolled out",
+      "scenario_id": "cluster.deploy",
+      "status": "passed"
+    },
+    {
+      "evidence": "service account token absent",
+      "scenario_id": "security.no_token",
+      "status": "passed"
+    },
+    {
+      "evidence": "root filesystem write denied",
+      "scenario_id": "security.read_only_root",
+      "status": "passed"
+    },
+    {
+      "evidence": "bounded temporary volume writable",
+      "scenario_id": "security.tmp_writable",
+      "status": "passed"
+    },
+    {
+      "evidence": "external HTTP request denied",
+      "scenario_id": "network.egress_denied",
+      "status": "passed"
+    },
+    {
+      "evidence": "replacement pod: ano-can-alpha8-6da65eca-68496ff697-pmj4c",
+      "scenario_id": "fault.pod_recovery",
+      "status": "passed"
+    },
+    {
+      "evidence": "deployment and network policy removed",
+      "scenario_id": "rollback.resources_removed",
+      "status": "passed"
+    }
+  ],
+  "schema_version": "0.3.0",
+  "started_at": "2026-08-28T06:21:48.236Z",
+  "status": "passed"
+}

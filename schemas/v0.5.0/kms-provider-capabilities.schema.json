@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.5.0:kms-provider-capabilities",
+  "title": "ANO External KMS Provider Capabilities",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "provider", "authenticated_wrap", "remote_rewrap", "purpose_binding", "non_exportable_master_key", "runtime_verified", "remote_transport_verified", "hsm_backed"],
+  "properties": {
+    "schema_version": {"const": "0.5.0"},
+    "provider": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "authenticated_wrap": {"type": "boolean"}, "remote_rewrap": {"type": "boolean"},
+    "purpose_binding": {"type": "boolean"}, "non_exportable_master_key": {"type": "boolean"},
+    "runtime_verified": {"type": "boolean"}, "remote_transport_verified": {"type": "boolean"},
+    "hsm_backed": {"type": "boolean"}
+  }
+}

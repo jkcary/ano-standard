@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:cluster-validation-report",
+  "title": "ANO Isolated Cluster Validation Report",
+  "type": "object", "additionalProperties": false,
+  "required": ["run_id", "schema_version", "harness_version", "context", "namespace", "image_ref", "environment", "started_at", "finished_at", "scenarios", "cleanup", "status"],
+  "properties": {
+    "run_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.3.0"},
+    "harness_version": {"type": "string", "minLength": 1},
+    "context": {"type": "string", "minLength": 1},
+    "namespace": {"type": "string", "pattern": "^ano-alpha8-[a-f0-9]{8}$"},
+    "image_ref": {"type": "string", "pattern": "^[A-Za-z0-9._:/-]+@sha256:[a-f0-9]{64}$"},
+    "environment": {
+      "type": "object", "additionalProperties": false,
+      "required": ["cluster_type", "cluster_runtime_version", "kubernetes_version", "network_policy_provider", "network_policy_version", "network_policy_manifest_sha256"],
+      "properties": {
+        "cluster_type": {"type": "string", "minLength": 1},
+        "cluster_runtime_version": {"type": "string", "minLength": 1},
+        "kubernetes_version": {"type": "string", "pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+"},
+        "network_policy_provider": {"type": "string", "minLength": 1},
+        "network_policy_version": {"type": "string", "minLength": 1},
+        "network_policy_manifest_sha256": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+      }
+    },
+    "started_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "finished_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "scenarios": {
+      "type": "array", "minItems": 6, "uniqueItems": true,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["scenario_id", "status", "evidence"],
+        "properties": {
+          "scenario_id": {"type": "string", "pattern": "^[a-z][a-z0-9_.-]{2,63}$"},
+          "status": {"enum": ["passed", "failed", "skipped"]},
+          "evidence": {"type": "string"}
+        }
+      }
+    },
+    "cleanup": {
+      "type": "object", "additionalProperties": false,
+      "required": ["attempted", "verified"],
+      "properties": {"attempted": {"type": "boolean"}, "verified": {"type": "boolean"}}
+    },
+    "status": {"enum": ["passed", "failed", "partial"]}
+  }
+}

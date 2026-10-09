@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:cluster-report-source-statement",
+  "title": "ANO Signed Cluster Report Source Statement",
+  "type": "object", "additionalProperties": false,
+  "required": ["statement_id", "schema_version", "predicate_type", "subject", "source_id", "source_domain", "issued_at"],
+  "properties": {
+    "statement_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.3.0"},
+    "predicate_type": {"const": "urn:ano:predicate:cluster-report-source:v1"},
+    "subject": {
+      "type": "object", "additionalProperties": false,
+      "required": ["run_id", "report_hash"],
+      "properties": {
+        "run_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+        "report_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"}
+      }
+    },
+    "source_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "source_domain": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "issued_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"}
+  }
+}

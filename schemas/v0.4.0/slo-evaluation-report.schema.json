@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.4.0:slo-evaluation-report",
+  "title": "ANO Tenant SLO Evaluation Report",
+  "type": "object", "additionalProperties": false,
+  "required": ["report_id", "schema_version", "tenant_id", "service", "window_start", "window_end", "sample_count", "availability", "p95_latency_ms", "availability_target", "p95_latency_target_ms", "status"],
+  "properties": {
+    "report_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.4.0"},
+    "tenant_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "service": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "window_start": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"},
+    "window_end": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"},
+    "sample_count": {"type": "integer", "minimum": 0},
+    "availability": {"type": "number", "minimum": 0, "maximum": 1},
+    "p95_latency_ms": {"type": "number", "minimum": 0},
+    "availability_target": {"type": "number", "minimum": 0, "maximum": 1},
+    "p95_latency_target_ms": {"type": "number", "minimum": 0},
+    "status": {"enum": ["met", "violated"]}
+  }
+}

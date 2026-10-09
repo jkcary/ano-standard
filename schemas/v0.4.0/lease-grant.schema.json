@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.4.0:lease-grant",
+  "title": "ANO Durable Lease Grant",
+  "type": "object", "additionalProperties": false,
+  "required": ["lease_id", "schema_version", "resource_id", "owner_id", "fencing_token", "acquired_at", "heartbeat_at", "expires_at"],
+  "properties": {
+    "lease_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.4.0"},
+    "resource_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "owner_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "fencing_token": {"type": "integer", "minimum": 1},
+    "acquired_at": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"},
+    "heartbeat_at": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"},
+    "expires_at": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"}
+  }
+}

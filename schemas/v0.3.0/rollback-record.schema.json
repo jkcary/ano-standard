@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:ano:schema:0.3.0:rollback-record", "title": "ANO Verified Rollback Record",
+  "type": "object", "additionalProperties": false,
+  "required": ["rollback_id", "schema_version", "deployment_id", "trigger_codes", "candidate_hash", "baseline_hash", "restored_hash", "restored_at", "verification_method", "verified", "residual_effects"],
+  "properties": {
+    "rollback_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "schema_version": {"const": "0.3.0"}, "deployment_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "trigger_codes": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/reason_codes"},
+    "candidate_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"}, "baseline_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"}, "restored_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"},
+    "restored_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"}, "verification_method": {"type": "string", "minLength": 1}, "verified": {"type": "boolean"}, "residual_effects": {"type": "array", "items": {"type": "string"}}
+  }
+}

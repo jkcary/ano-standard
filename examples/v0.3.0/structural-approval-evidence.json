@@ -1,0 +1,13 @@
+{
+  "evidence_id": "sev_demo_001", "schema_version": "0.3.0", "proposal_id": "chg_structure_001",
+  "candidate_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+  "scope_hash": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+  "issued_at": "2026-08-27T17:00:00Z", "expires_at": "2027-08-27T17:00:00Z", "proposer_domain": "architecture_domain",
+  "approvals": [
+    {"approver_id": "human_safety_001", "independence_domain": "safety_board"},
+    {"approver_id": "human_owner_001", "independence_domain": "principal_board"}
+  ],
+  "approved_permissions": ["read_metrics", "write_draft"],
+  "issuer": "approval_service_001", "key_id": "approval_key_001",
+  "signature": "hmac-sha256:0000000000000000000000000000000000000000000000000000000000000000"
+}

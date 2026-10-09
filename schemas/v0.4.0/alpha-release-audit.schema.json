@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.4.0:alpha-release-audit",
+  "title": "ANO 0.4 Alpha Release Audit",
+  "type": "object", "additionalProperties": false,
+  "required": ["audit_id", "schema_version", "implementation_version", "implementation_source_hash", "audited_at", "status", "checks", "conformance", "inventory", "non_claims"],
+  "properties": {
+    "audit_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.4.0"},
+    "implementation_version": {"type": "string", "minLength": 1},
+    "implementation_source_hash": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"},
+    "audited_at": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"},
+    "status": {"enum": ["passed", "failed"]},
+    "checks": {
+      "type": "array", "minItems": 9,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["check", "status", "detail"],
+        "properties": {
+          "check": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+          "status": {"enum": ["passed", "failed"]},
+          "detail": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "conformance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tests_run", "passed", "skipped", "required_tests", "profile_passed", "failed"],
+      "properties": {
+        "tests_run": {"type": "integer", "minimum": 1},
+        "passed": {"type": "integer", "minimum": 1},
+        "skipped": {"type": "integer", "minimum": 0},
+        "required_tests": {"type": "integer", "minimum": 1},
+        "profile_passed": {"type": "integer", "minimum": 1},
+        "failed": {"type": "integer", "minimum": 0}
+      }
+    },
+    "inventory": {
+      "type": "object", "additionalProperties": false,
+      "required": ["v030_schemas", "v040_schemas", "state_machines", "v040_acceptance_checks"],
+      "properties": {
+        "v030_schemas": {"type": "integer", "minimum": 1},
+        "v040_schemas": {"type": "integer", "minimum": 1},
+        "state_machines": {"type": "integer", "minimum": 1},
+        "v040_acceptance_checks": {"type": "integer", "minimum": 1}
+      }
+    },
+    "non_claims": {"type": "array", "minItems": 4, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+  }
+}

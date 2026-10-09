@@ -1,0 +1,18 @@
+{
+  "adapter_id": "adapter_demo_001",
+  "schema_version": "0.3.0",
+  "provider": "local-demo",
+  "model_id": "deterministic-stub",
+  "model_revision": "1",
+  "interface_version": "ano-model-adapter/1.0",
+  "modalities": ["text"],
+  "capabilities": {"planning": 0.5, "structured_output": 1.0},
+  "limits": {"context_tokens": 8192, "max_output_tokens": 2048},
+  "operational_profile": {
+    "latency_p95_ms": 1,
+    "input_cost_per_million_tokens": {"amount": 0, "currency": "USD"}
+  },
+  "safety_profile_id": "safety_demo_001",
+  "eval_report_id": "eval_demo_001",
+  "status": "active"
+}

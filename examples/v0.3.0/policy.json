@@ -1,0 +1,6 @@
+{
+  "policy_id": "policy_demo_001", "schema_version": "0.3.0", "version": 1,
+  "source_level": "principal_denial", "priority": 100, "scope": {"action_type": "funds.transfer"},
+  "effect": "deny", "reason_codes": ["PRINCIPAL_DENIAL"], "valid_from": "2026-08-27T00:00:00Z",
+  "expires_at": null, "status": "active"
+}

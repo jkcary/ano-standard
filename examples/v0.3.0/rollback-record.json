@@ -1,0 +1,8 @@
+{
+  "rollback_id": "rbk_demo_001", "schema_version": "0.3.0", "deployment_id": "can_demo_001",
+  "trigger_codes": ["SAFETY_REGRESSION"],
+  "candidate_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+  "baseline_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "restored_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "restored_at": "2026-08-27T17:05:00Z", "verification_method": "canonical_state_hash", "verified": true, "residual_effects": []
+}

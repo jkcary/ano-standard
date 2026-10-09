@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:decision",
+  "title": "ANO Decision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decision_id", "schema_version", "goal_id", "plan_id", "outcome",
+    "reason_codes", "policy_versions", "state_versions", "context_snapshot_id", "decided_at"
+  ],
+  "properties": {
+    "decision_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.3.0"},
+    "goal_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "plan_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "outcome": {"enum": ["EXECUTE", "ASK_PRINCIPAL", "DEFER", "SCHEDULE", "EXPLORE", "ABORT", "ESCALATE"]},
+    "reason_codes": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/reason_codes"},
+    "policy_versions": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}
+    },
+    "state_versions": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"type": "integer", "minimum": 0}
+    },
+    "context_snapshot_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "decided_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"}
+  }
+}
+

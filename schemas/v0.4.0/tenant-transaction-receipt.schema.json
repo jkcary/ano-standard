@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.4.0:tenant-transaction-receipt",
+  "title": "ANO Tenant Transaction Receipt",
+  "type": "object", "additionalProperties": false,
+  "required": ["transaction_id", "schema_version", "tenant_id", "namespace", "object_id", "operation", "previous_version", "version", "payload_hash", "event_sequence", "event_record_hash", "committed_at", "idempotency_key", "idempotent_replay"],
+  "properties": {
+    "transaction_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.4.0"},
+    "tenant_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "namespace": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "object_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "operation": {"enum": ["put", "delete"]},
+    "previous_version": {"type": "integer", "minimum": 0},
+    "version": {"type": "integer", "minimum": 1},
+    "payload_hash": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"},
+    "event_sequence": {"type": "integer", "minimum": 1},
+    "event_record_hash": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"},
+    "committed_at": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"},
+    "idempotency_key": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "idempotent_replay": {"type": "boolean"}
+  }
+}

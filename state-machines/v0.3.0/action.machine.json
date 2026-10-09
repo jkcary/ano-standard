@@ -1,0 +1,33 @@
+{
+  "machine_id": "ano.action.lifecycle",
+  "schema_version": "0.3.0",
+  "entity_type": "action",
+  "initial_state": "proposed",
+  "states": [
+    "proposed", "validated", "authorized", "executing", "executed", "unknown",
+    "observed", "verified", "completed", "failed", "partial", "cancelled",
+    "escalated", "rolled_back"
+  ],
+  "terminal_states": ["completed", "failed", "cancelled", "escalated", "rolled_back"],
+  "transitions": [
+    {"from": "proposed", "event": "action.validated", "to": "validated", "guards": ["schema_valid", "state_version_current"]},
+    {"from": "proposed", "event": "action.cancelled", "to": "cancelled", "guards": []},
+    {"from": "validated", "event": "action.authorized", "to": "authorized", "guards": ["permission_active", "parameters_match", "budget_available"]},
+    {"from": "validated", "event": "action.failed", "to": "failed", "guards": []},
+    {"from": "authorized", "event": "action.execution_started", "to": "executing", "guards": ["permission_rechecked", "idempotency_reserved"]},
+    {"from": "authorized", "event": "action.cancelled", "to": "cancelled", "guards": []},
+    {"from": "executing", "event": "action.executed", "to": "executed", "guards": ["tool_returned"]},
+    {"from": "executing", "event": "action.result_unknown", "to": "unknown", "guards": ["outcome_unobservable"]},
+    {"from": "executing", "event": "action.failed", "to": "failed", "guards": []},
+    {"from": "executed", "event": "action.observed", "to": "observed", "guards": ["observation_present"]},
+    {"from": "executed", "event": "action.partial", "to": "partial", "guards": ["partial_effect_observed"]},
+    {"from": "unknown", "event": "action.observed", "to": "observed", "guards": ["external_state_queried"]},
+    {"from": "unknown", "event": "action.escalated", "to": "escalated", "guards": []},
+    {"from": "observed", "event": "action.verified", "to": "verified", "guards": ["verification_passed"]},
+    {"from": "observed", "event": "action.failed", "to": "failed", "guards": ["verification_failed"]},
+    {"from": "verified", "event": "action.completed", "to": "completed", "guards": ["action_success_only"]},
+    {"from": "partial", "event": "action.rolled_back", "to": "rolled_back", "guards": ["compensation_verified"]},
+    {"from": "partial", "event": "action.escalated", "to": "escalated", "guards": []}
+  ]
+}
+

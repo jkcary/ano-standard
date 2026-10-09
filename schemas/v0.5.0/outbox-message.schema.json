@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.5.0:outbox-message",
+  "title": "ANO Transactional Outbox Message",
+  "type": "object", "additionalProperties": false,
+  "required": ["message_id", "schema_version", "tenant_id", "operation_id", "topic", "payload", "payload_hash", "status", "attempts", "max_attempts", "available_at", "claimed_by", "claim_epoch", "claim_expires_at", "created_at", "delivered_at", "last_error"],
+  "properties": {
+    "message_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.5.0"},
+    "tenant_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "operation_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "topic": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "payload": {"type": "object"},
+    "payload_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"},
+    "status": {"enum": ["pending", "claimed", "delivered", "dead_letter"]},
+    "attempts": {"type": "integer", "minimum": 0},
+    "max_attempts": {"type": "integer", "minimum": 1, "maximum": 100},
+    "available_at": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"},
+    "claimed_by": {"oneOf": [{"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, {"type": "null"}]},
+    "claim_epoch": {"oneOf": [{"type": "integer", "minimum": 1}, {"type": "null"}]},
+    "claim_expires_at": {"oneOf": [{"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"}, {"type": "null"}]},
+    "created_at": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"},
+    "delivered_at": {"oneOf": [{"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"}, {"type": "null"}]},
+    "last_error": {"oneOf": [{"type": "string", "minLength": 1, "maxLength": 2048}, {"type": "null"}]}
+  }
+}

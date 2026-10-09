@@ -1,0 +1,79 @@
+{
+  "checks": [
+    {
+      "check": "kms_capability_truthfulness",
+      "detail": "reference KMS semantics are verified without claiming cloud transport or HSM backing",
+      "status": "passed"
+    },
+    {
+      "check": "kms_caller_purpose_binding",
+      "detail": "observed=KMS_CALLER_DENIED",
+      "status": "passed"
+    },
+    {
+      "check": "remote_rewrap",
+      "detail": "rewrap preserved the DEK while replacing its master-key envelope",
+      "status": "passed"
+    },
+    {
+      "check": "oidc_jwks_identity",
+      "detail": "EdDSA JWKS token became a schema-valid workload identity",
+      "status": "passed"
+    },
+    {
+      "check": "identity_replay_rejection",
+      "detail": "observed=IDENTITY_TOKEN_REPLAY",
+      "status": "passed"
+    },
+    {
+      "check": "jwks_rotation",
+      "detail": "unknown key failed closed until explicit JWKS refresh",
+      "status": "passed"
+    },
+    {
+      "check": "spiffe_trust_domain",
+      "detail": "JWT-SVID subject and selectors were bound to the configured trust domain",
+      "status": "passed"
+    },
+    {
+      "check": "short_secret_lease",
+      "detail": "identity-bound lease redeemed encrypted material exactly once",
+      "status": "passed"
+    },
+    {
+      "check": "secret_purpose_binding",
+      "detail": "observed=SECRET_LEASE_BINDING_MISMATCH",
+      "status": "passed"
+    },
+    {
+      "check": "persistent_leak_revocation",
+      "detail": "reported credential leak remained revoked after broker restart",
+      "status": "passed"
+    },
+    {
+      "check": "signed_provenance_sbom",
+      "detail": "trusted builder signature bound artifact, immutable source, invocation, materials, and SBOM",
+      "status": "passed"
+    },
+    {
+      "check": "artifact_substitution_rejection",
+      "detail": "observed=SUPPLY_CHAIN_BINDING_MISMATCH",
+      "status": "passed"
+    },
+    {
+      "check": "external_service_nonclaim",
+      "detail": "no cloud KMS, HSM, enterprise OIDC, or SPIRE deployment certification is claimed",
+      "status": "passed"
+    }
+  ],
+  "cloud_runtime_verified": false,
+  "generated_at": "2026-09-02T03:10:19.409Z",
+  "implementation_source_hash": "sha256:875dc9d5721761f9cbf207b2c8906ef69e97bc3d9ec3e1c696978950f204e5df",
+  "implementation_version": "0.5.0-alpha.4",
+  "report_id": "eta_0e1a9d528c1d43f5a58097e3d1e2b63d",
+  "schema_version": "0.5.0",
+  "secret_event_id": "sle_2593ac2a75ac44cab339920d89bf7295",
+  "status": "passed",
+  "trust_decision_id": "scd_be8fd5ada0a544258b118a9709211f61",
+  "verified_identity_id": "wid_a155ed4274cf464b9611ee9d7c5bd764"
+}

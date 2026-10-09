@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:canary-checkpoint",
+  "title": "ANO Durable Canary Checkpoint",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["checkpoint_id", "schema_version", "sequence", "previous_hash", "record_hash", "event_type", "occurred_at", "snapshot"],
+  "properties": {
+    "checkpoint_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.3.0"},
+    "sequence": {"type": "integer", "minimum": 1},
+    "previous_hash": {"oneOf": [{"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"}, {"type": "null"}]},
+    "record_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"},
+    "event_type": {"enum": ["canary.started", "canary.budget_updated", "canary.telemetry_observed", "canary.promoted", "canary.rolled_back"]},
+    "occurred_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "snapshot": {
+      "type": "object", "additionalProperties": false,
+      "required": ["baseline", "current", "deployment", "spent", "rollback_record"],
+      "properties": {
+        "baseline": {"type": "object"},
+        "current": {"type": "object"},
+        "deployment": {"$ref": "urn:ano:schema:0.3.0:canary-deployment"},
+        "spent": {"type": "number", "minimum": 0},
+        "rollback_record": {"oneOf": [{"$ref": "urn:ano:schema:0.3.0:rollback-record"}, {"type": "null"}]}
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:ano:schema:0.3.0:change-proposal", "title": "ANO Change Proposal",
+  "type": "object", "additionalProperties": false,
+  "required": ["proposal_id", "schema_version", "version", "proposer_id", "change_level", "target_components", "motivation", "evidence_ids", "patch_artifact_ref", "expected_benefits", "possible_harms", "evaluation_plan_id", "rollback_plan_id", "requested_permissions", "baseline_hash", "status"],
+  "properties": {
+    "proposal_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "schema_version": {"const": "0.3.0"}, "version": {"type": "integer", "minimum": 1}, "proposer_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "change_level": {"enum": ["L1_CONTEXT", "L2_MEMORY", "L3_POLICY", "L4_SKILL", "L5_STRUCTURE"]},
+    "target_components": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}, "motivation": {"type": "string", "minLength": 1},
+    "evidence_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}}, "patch_artifact_ref": {"type": "string", "minLength": 1},
+    "expected_benefits": {"type": "object"}, "possible_harms": {"type": "array", "items": {"type": "string"}}, "evaluation_plan_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "rollback_plan_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "requested_permissions": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}, "baseline_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"},
+    "status": {"enum": ["proposed", "sandboxed", "tested", "evaluated", "approved", "staged", "production", "rejected", "rolled_back"]}
+  }
+}

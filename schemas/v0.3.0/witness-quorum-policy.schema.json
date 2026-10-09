@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:witness-quorum-policy",
+  "title": "ANO Independent Witness Quorum Policy",
+  "type": "object", "additionalProperties": false,
+  "required": ["policy_id", "schema_version", "policy_version", "issued_at", "threshold", "maximum_witness_spread_seconds", "maximum_bundle_delay_seconds", "required_member_ids", "members"],
+  "properties": {
+    "policy_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.3.0"},
+    "policy_version": {"type": "integer", "minimum": 1},
+    "issued_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "threshold": {"type": "integer", "minimum": 1},
+    "maximum_witness_spread_seconds": {"type": "integer", "minimum": 0},
+    "maximum_bundle_delay_seconds": {"type": "integer", "minimum": 0},
+    "required_member_ids": {
+      "type": "array", "uniqueItems": true,
+      "items": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}
+    },
+    "members": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["member_id", "witness_domain", "key_ids"],
+        "properties": {
+          "member_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+          "witness_domain": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+          "key_ids": {
+            "type": "array", "minItems": 1, "uniqueItems": true,
+            "items": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.5.0:evolution-event",
+  "title": "ANO Evolution Ledger Event",
+  "type": "object", "additionalProperties": false,
+  "required": ["event_id", "schema_version", "component_id", "transaction_id", "sequence", "event_type", "transaction_status", "detail_hash", "previous_hash", "recorded_at", "record_hash"],
+  "properties": {
+    "event_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.5.0"},
+    "component_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "transaction_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "sequence": {"type": "integer", "minimum": 1},
+    "event_type": {"enum": ["evolution.proposed", "evolution.evaluated", "evolution.approved", "evolution.staged", "evolution.activated", "evolution.rejected", "evolution.rolled_back"]},
+    "transaction_status": {"enum": ["proposed", "evaluated", "approved", "staged", "active", "rejected", "rolled_back"]},
+    "detail_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"},
+    "previous_hash": {"oneOf": [{"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"}, {"type": "null"}]},
+    "recorded_at": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"},
+    "record_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"}
+  }
+}

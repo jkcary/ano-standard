@@ -1,0 +1,27 @@
+{
+  "policy_id": "wqp_demo_001",
+  "schema_version": "0.3.0",
+  "policy_version": 1,
+  "issued_at": "2026-08-28T07:00:00Z",
+  "threshold": 2,
+  "maximum_witness_spread_seconds": 300,
+  "maximum_bundle_delay_seconds": 600,
+  "required_member_ids": [],
+  "members": [
+    {
+      "member_id": "member_witness_a",
+      "witness_domain": "evidence_domain_a",
+      "key_ids": ["witness_a_ed25519_001"]
+    },
+    {
+      "member_id": "member_witness_b",
+      "witness_domain": "evidence_domain_b",
+      "key_ids": ["witness_b_ed25519_001"]
+    },
+    {
+      "member_id": "member_witness_c",
+      "witness_domain": "evidence_domain_c",
+      "key_ids": ["witness_c_ed25519_001"]
+    }
+  ]
+}

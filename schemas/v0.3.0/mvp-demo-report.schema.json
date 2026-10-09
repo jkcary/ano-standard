@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:mvp-demo-report",
+  "title": "ANO MVP End-to-End Demonstration Report",
+  "type": "object", "additionalProperties": false,
+  "required": ["report_id", "schema_version", "implementation_version", "generated_at", "status", "stages", "negative_controls", "conformance_anchor"],
+  "properties": {
+    "report_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.3.0"},
+    "implementation_version": {"type": "string", "minLength": 1},
+    "generated_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "status": {"enum": ["passed", "failed"]},
+    "stages": {
+      "type": "array", "minItems": 4,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["stage", "status", "evidence"],
+        "properties": {
+          "stage": {"enum": ["governed_action", "reflection_candidate", "model_advancement", "source_transparency"]},
+          "status": {"enum": ["passed", "failed"]},
+          "evidence": {"type": "object"}
+        }
+      }
+    },
+    "negative_controls": {
+      "type": "array", "minItems": 2,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["control", "expected_error", "observed_error", "status"],
+        "properties": {
+          "control": {"type": "string", "minLength": 1},
+          "expected_error": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]{2,63}$"},
+          "observed_error": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]{2,63}$"},
+          "status": {"enum": ["passed", "failed"]}
+        }
+      }
+    },
+    "conformance_anchor": {
+      "type": "object", "additionalProperties": false,
+      "required": ["profile", "report_hash", "required_tests", "profile_passed", "failed", "skipped"],
+      "properties": {
+        "profile": {"const": "ANO-S"},
+        "report_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"},
+        "required_tests": {"type": "integer", "minimum": 1},
+        "profile_passed": {"type": "integer", "minimum": 1},
+        "failed": {"type": "integer", "minimum": 0},
+        "skipped": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

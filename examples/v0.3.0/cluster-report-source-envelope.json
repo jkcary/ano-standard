@@ -1,0 +1,8 @@
+{
+  "payloadType": "application/vnd.ano.cluster-report-source-statement.v1+json",
+  "payload": "eyJkZW1vIjoic2lnbmVkX3NvdXJjZSJ9",
+  "signatures": [{
+    "keyid": "sensor_a_ed25519_001",
+    "sig": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+  }]
+}

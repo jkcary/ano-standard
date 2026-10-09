@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:state-projection",
+  "title": "ANO State Projection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "projection_id", "projection_type", "schema_version", "based_on_event_position",
+    "version", "generated_at", "integrity_hash", "state"
+  ],
+  "properties": {
+    "projection_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "projection_type": {"type": "string", "pattern": "^[a-z][a-z0-9_.-]{2,63}$"},
+    "schema_version": {"const": "0.3.0"},
+    "based_on_event_position": {"type": "integer", "minimum": 0},
+    "version": {"type": "integer", "minimum": 1},
+    "generated_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "integrity_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"},
+    "state": {"type": "object"}
+  }
+}
+

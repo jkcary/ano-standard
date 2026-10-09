@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:conformance-claim",
+  "title": "ANO Conformance Claim",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "specification", "specification_version", "profile", "status", "implementation_name",
+    "implementation_version", "implementation_source_hash", "test_suite_version", "passed_tests",
+    "failed_tests", "declared_exceptions", "issued_at"
+  ],
+  "properties": {
+    "specification": {"const": "ANO"},
+    "specification_version": {"const": "0.3.0"},
+    "profile": {"enum": ["ANO-C", "ANO-P", "ANO-G", "ANO-A", "ANO-S"]},
+    "status": {"enum": ["partial", "conformant"]},
+    "implementation_name": {"type": "string", "minLength": 1},
+    "implementation_version": {"type": "string", "minLength": 1},
+    "implementation_source_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"},
+    "test_suite_version": {"type": "string", "minLength": 1},
+    "passed_tests": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "failed_tests": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "declared_exceptions": {"type": "array", "items": {"type": "string"}},
+    "issued_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "conformant"}}, "required": ["status"]},
+      "then": {"properties": {"failed_tests": {"maxItems": 0}}}
+    }
+  ]
+}

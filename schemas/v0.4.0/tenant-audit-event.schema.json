@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.4.0:tenant-audit-event",
+  "title": "ANO Tenant Audit Event",
+  "type": "object", "additionalProperties": false,
+  "required": ["event_id", "schema_version", "tenant_id", "transaction_id", "idempotency_key", "request_hash", "sequence", "event_type", "namespace", "object_id", "object_version", "payload_hash", "previous_hash", "recorded_at", "record_hash"],
+  "properties": {
+    "event_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.4.0"},
+    "tenant_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "transaction_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "idempotency_key": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "request_hash": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"},
+    "sequence": {"type": "integer", "minimum": 1},
+    "event_type": {"enum": ["tenant.object.put", "tenant.object.delete"]},
+    "namespace": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "object_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "object_version": {"type": "integer", "minimum": 1},
+    "payload_hash": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"},
+    "previous_hash": {"oneOf": [{"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"}, {"type": "null"}]},
+    "recorded_at": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"},
+    "record_hash": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"}
+  }
+}

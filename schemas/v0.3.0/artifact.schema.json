@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:ano:schema:0.3.0:artifact", "title": "ANO Governed Artifact",
+  "type": "object", "additionalProperties": false,
+  "required": ["artifact_id", "schema_version", "artifact_type", "version", "source", "integrity_hash", "signature", "builder_id", "approved_by", "status"],
+  "properties": {
+    "artifact_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "schema_version": {"const": "0.3.0"},
+    "artifact_type": {"enum": ["model", "adapter", "tool", "skill", "code", "dependency", "prompt_template", "policy_package"]}, "version": {"type": "string", "minLength": 1}, "source": {"type": "string", "minLength": 1},
+    "integrity_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"},
+    "signature": {"type": "object", "additionalProperties": false, "required": ["signer_id", "value", "verified"], "properties": {"signer_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "value": {"type": "string", "minLength": 1}, "verified": {"type": "boolean"}}},
+    "builder_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "approved_by": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}},
+    "status": {"enum": ["candidate", "approved", "deployed", "revoked", "quarantined"]}
+  }
+}

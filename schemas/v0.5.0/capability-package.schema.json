@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.5.0:capability-package",
+  "title": "ANO Signed Capability Package",
+  "type": "object", "additionalProperties": false,
+  "required": ["package_id", "schema_version", "component_id", "generation", "kind", "artifact_hash", "manifest_hash", "capabilities", "required_permissions", "budget_ceiling", "source_adapter_id", "evidence_ids", "goal_contract_hash", "evaluator_hash", "rollback_package_id", "issuer", "key_id", "created_at", "package_hash", "signature"],
+  "properties": {
+    "package_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.5.0"},
+    "component_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "generation": {"type": "integer", "minimum": 1},
+    "kind": {"enum": ["model", "skill", "policy", "orchestration", "tool", "runtime"]},
+    "artifact_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"},
+    "manifest_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"},
+    "capabilities": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1, "maxLength": 128}},
+    "required_permissions": {"type": "array", "uniqueItems": true, "items": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}},
+    "budget_ceiling": {"$ref": "#/$defs/budget"},
+    "source_adapter_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "evidence_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}},
+    "goal_contract_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"},
+    "evaluator_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"},
+    "rollback_package_id": {"oneOf": [{"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, {"type": "null"}]},
+    "issuer": {"type": "string", "minLength": 3, "maxLength": 512},
+    "key_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "created_at": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"},
+    "package_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"},
+    "signature": {"type": "string", "pattern": "^[A-Za-z0-9+/]*={0,2}$"}
+  },
+  "$defs": {
+    "budget": {
+      "type": "object", "minProperties": 1,
+      "propertyNames": {"pattern": "^[A-Za-z][A-Za-z0-9_.:-]{2,127}$"},
+      "additionalProperties": {"type": "integer", "minimum": 0}
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "specification": "ANO",
+  "version": "0.4.0",
+  "draft": "https://json-schema.org/draft/2020-12/schema",
+  "compatibility_base": "0.3.0",
+  "schemas": [
+    "common.schema.json",
+    "external-identity-assertion.schema.json",
+    "lease-grant.schema.json",
+    "quota-consumption-receipt.schema.json",
+    "slo-evaluation-report.schema.json",
+    "storage-adapter-capabilities.schema.json",
+    "production-kernel-report.schema.json",
+    "release-audit.schema.json",
+    "tenant-session.schema.json",
+    "kms-wrapped-key.schema.json",
+    "encrypted-payload-envelope.schema.json",
+    "tenant-key-rotation-receipt.schema.json",
+    "tenant-key-destruction-receipt.schema.json",
+    "tenant-state-object.schema.json",
+    "tenant-transaction-receipt.schema.json",
+    "tenant-idempotency-record.schema.json",
+    "tenant-audit-event.schema.json",
+    "tenant-export-package.schema.json",
+    "tenant-transfer-envelope.schema.json",
+    "tenant-import-receipt.schema.json",
+    "sqlite-backup-manifest.schema.json",
+    "storage-acceptance-report.schema.json",
+    "alpha-release-audit.schema.json"
+  ]
+}

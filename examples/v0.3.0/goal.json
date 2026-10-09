@@ -1,0 +1,24 @@
+{
+  "goal_id": "goal_demo_001",
+  "schema_version": "0.3.0",
+  "owner_id": "usr_demo_001",
+  "title": "Send approved demo message",
+  "goal_type": "user",
+  "parent_goal_id": null,
+  "source_event_ids": ["evt_demo_001"],
+  "priority": 0.8,
+  "success_criteria": [
+    {
+      "criterion_id": "crit_demo_001",
+      "description": "Demo tool accepts the message",
+      "verification_method": "result_code_equals_accepted"
+    }
+  ],
+  "constraints": {
+    "budget": {"amount": 1, "currency": "USD"},
+    "deadline": null
+  },
+  "status": "active",
+  "version": 1
+}
+

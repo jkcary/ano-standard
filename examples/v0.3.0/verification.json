@@ -1,0 +1,13 @@
+{
+  "verification_id": "ver_demo_001",
+  "schema_version": "0.3.0",
+  "subject_type": "action",
+  "subject_id": "act_demo_001",
+  "criterion": "Demo tool accepted message",
+  "method": "result_code_equals_accepted",
+  "evidence_ids": ["obs_demo_001"],
+  "result": "passed",
+  "verifier_id": "verifier_demo_001",
+  "verified_at": "2026-08-27T12:02:04Z"
+}
+

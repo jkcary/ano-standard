@@ -1,0 +1,16 @@
+{
+  "machine_id": "ano.change_proposal.lifecycle", "schema_version": "0.3.0", "entity_type": "change_proposal", "initial_state": "proposed",
+  "states": ["proposed", "sandboxed", "tested", "evaluated", "approved", "staged", "production", "rejected", "rolled_back"], "terminal_states": ["rejected", "rolled_back"],
+  "transitions": [
+    {"from": "proposed", "event": "change.sandboxed", "to": "sandboxed", "guards": ["schema_valid", "protected_assets_unchanged"]},
+    {"from": "sandboxed", "event": "change.tested", "to": "tested", "guards": ["static_analysis_passed", "tests_passed"]},
+    {"from": "tested", "event": "change.evaluated", "to": "evaluated", "guards": ["signed_baseline_compared", "sealed_eval_passed"]},
+    {"from": "evaluated", "event": "change.approved", "to": "approved", "guards": ["independent_approval"]},
+    {"from": "approved", "event": "change.staged", "to": "staged", "guards": ["scope_bounded", "rollback_rehearsed"]},
+    {"from": "staged", "event": "change.promoted", "to": "production", "guards": ["guardrails_passed"]},
+    {"from": "staged", "event": "change.rolled_back", "to": "rolled_back", "guards": ["baseline_restored"]},
+    {"from": "production", "event": "change.rolled_back", "to": "rolled_back", "guards": ["baseline_restored"]},
+    {"from": "proposed", "event": "change.rejected", "to": "rejected", "guards": []},
+    {"from": "evaluated", "event": "change.rejected", "to": "rejected", "guards": []}
+  ]
+}

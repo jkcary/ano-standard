@@ -1,0 +1,24 @@
+{
+  "machine_id": "ano.goal.lifecycle",
+  "schema_version": "0.3.0",
+  "entity_type": "goal",
+  "initial_state": "proposed",
+  "states": ["proposed", "active", "paused", "blocked", "completed", "failed", "cancelled", "superseded"],
+  "terminal_states": ["completed", "failed", "cancelled", "superseded"],
+  "transitions": [
+    {"from": "proposed", "event": "goal.activated", "to": "active", "guards": ["owner_authorized", "success_criteria_present"]},
+    {"from": "proposed", "event": "goal.cancelled", "to": "cancelled", "guards": ["request_authorized"]},
+    {"from": "active", "event": "goal.paused", "to": "paused", "guards": []},
+    {"from": "active", "event": "goal.blocked", "to": "blocked", "guards": ["blocker_recorded", "review_time_present"]},
+    {"from": "active", "event": "goal.completed", "to": "completed", "guards": ["all_success_criteria_verified"]},
+    {"from": "active", "event": "goal.failed", "to": "failed", "guards": ["failure_evidence_present"]},
+    {"from": "active", "event": "goal.cancelled", "to": "cancelled", "guards": ["request_authorized"]},
+    {"from": "active", "event": "goal.superseded", "to": "superseded", "guards": ["replacement_goal_present"]},
+    {"from": "paused", "event": "goal.resumed", "to": "active", "guards": ["request_authorized"]},
+    {"from": "paused", "event": "goal.cancelled", "to": "cancelled", "guards": ["request_authorized"]},
+    {"from": "blocked", "event": "goal.unblocked", "to": "active", "guards": ["blocker_resolved"]},
+    {"from": "blocked", "event": "goal.failed", "to": "failed", "guards": ["failure_evidence_present"]},
+    {"from": "blocked", "event": "goal.cancelled", "to": "cancelled", "guards": ["request_authorized"]}
+  ]
+}
+

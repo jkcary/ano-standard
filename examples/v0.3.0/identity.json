@@ -1,0 +1,17 @@
+{
+  "organism_id": "ano_demo_001",
+  "schema_version": "0.3.0",
+  "version": 1,
+  "name": "ANO Demo",
+  "organism_type": "personal_assistant",
+  "created_at": "2026-08-27T12:00:00Z",
+  "status": "active",
+  "principals": [
+    {"principal_id": "usr_demo_001", "relationship": "owner"}
+  ],
+  "roles": ["personal_assistant"],
+  "responsibilities": ["manage_commitments", "support_decisions"],
+  "immutable_constraints": ["do_not_self_expand_authority", "respect_principal_revocation"],
+  "public_keys": []
+}
+

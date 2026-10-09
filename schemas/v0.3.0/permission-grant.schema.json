@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:permission-grant",
+  "title": "ANO Permission Grant",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "grant_id", "schema_version", "principal_id", "grantee_id", "capabilities",
+    "resource_scope", "constraints", "valid_from", "expires_at", "revocable",
+    "assurance_level", "status", "issued_at", "version"
+  ],
+  "properties": {
+    "grant_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.3.0"},
+    "principal_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "grantee_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "capabilities": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^[a-z][a-z0-9_.-]{2,127}$"}
+    },
+    "resource_scope": {"type": "object"},
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_actions"],
+      "properties": {
+        "max_actions": {"type": "integer", "minimum": 1},
+        "max_cost": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/money"},
+        "required_parameters_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"}
+      }
+    },
+    "valid_from": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "expires_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "revocable": {"type": "boolean"},
+    "assurance_level": {"enum": ["policy", "implicit_low_risk", "explicit_confirmation", "strong_multi_party"]},
+    "status": {"enum": ["active", "exhausted", "expired", "revoked"]},
+    "issued_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "version": {"type": "integer", "minimum": 1}
+  }
+}
+

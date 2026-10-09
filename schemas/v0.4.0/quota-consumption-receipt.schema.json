@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.4.0:quota-consumption-receipt",
+  "title": "ANO Tenant Quota Consumption Receipt",
+  "type": "object", "additionalProperties": false,
+  "required": ["receipt_id", "schema_version", "tenant_id", "operation_id", "window_start", "window_seconds", "amounts", "usage", "limits", "accepted_at", "idempotent_replay"],
+  "properties": {
+    "receipt_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.4.0"},
+    "tenant_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "operation_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "window_start": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"},
+    "window_seconds": {"type": "integer", "minimum": 1, "maximum": 86400},
+    "amounts": {"$ref": "#/$defs/dimensions"},
+    "usage": {"$ref": "#/$defs/dimensions"},
+    "limits": {"$ref": "#/$defs/dimensions"},
+    "accepted_at": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"},
+    "idempotent_replay": {"type": "boolean"}
+  },
+  "$defs": {
+    "dimensions": {
+      "type": "object", "minProperties": 1,
+      "propertyNames": {"pattern": "^[A-Za-z][A-Za-z0-9_.:-]{2,127}$"},
+      "additionalProperties": {"type": "integer", "minimum": 0}
+    }
+  }
+}

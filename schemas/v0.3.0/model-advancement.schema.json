@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:ano:schema:0.3.0:model-advancement", "title": "ANO Model Advancement",
+  "type": "object", "additionalProperties": false,
+  "required": ["advancement_id", "schema_version", "version", "previous_adapter_id", "candidate_adapter_id", "discovered_capabilities", "changed_limits", "affected_system_capabilities", "required_eval_suites", "rollout_policy_id", "candidate_orchestration_ids", "status"],
+  "properties": {
+    "advancement_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "schema_version": {"const": "0.3.0"}, "version": {"type": "integer", "minimum": 1},
+    "previous_adapter_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "candidate_adapter_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "discovered_capabilities": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}, "changed_limits": {"type": "object"}, "affected_system_capabilities": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "required_eval_suites": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}}, "rollout_policy_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "candidate_orchestration_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}}, "status": {"enum": ["candidate", "discovered", "evaluated", "shadow", "canary", "promoted", "partitioned", "rejected", "rolled_back"]}
+  }
+}

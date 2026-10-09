@@ -1,0 +1,9 @@
+{
+  "machine_id": "ano.approval.lifecycle", "schema_version": "0.3.0", "entity_type": "approval", "initial_state": "requested",
+  "states": ["requested", "approved", "rejected", "expired", "revoked"], "terminal_states": ["rejected", "expired", "revoked"],
+  "transitions": [
+    {"from": "requested", "event": "approval.approved", "to": "approved", "guards": ["all_roles_approved", "separation_satisfied", "parameters_unchanged", "not_expired"]},
+    {"from": "requested", "event": "approval.rejected", "to": "rejected", "guards": []}, {"from": "requested", "event": "approval.expired", "to": "expired", "guards": []},
+    {"from": "approved", "event": "approval.revoked", "to": "revoked", "guards": []}, {"from": "approved", "event": "approval.expired", "to": "expired", "guards": []}
+  ]
+}

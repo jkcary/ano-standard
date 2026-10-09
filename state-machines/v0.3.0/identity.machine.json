@@ -1,0 +1,18 @@
+{
+  "machine_id": "ano.identity.lifecycle",
+  "schema_version": "0.3.0",
+  "entity_type": "identity",
+  "initial_state": "provisioning",
+  "states": ["provisioning", "active", "suspended", "terminating", "terminated"],
+  "terminal_states": ["terminated"],
+  "transitions": [
+    {"from": "provisioning", "event": "identity.activated", "to": "active", "guards": ["principal_bound", "immutable_constraints_present"]},
+    {"from": "provisioning", "event": "identity.termination_requested", "to": "terminating", "guards": ["request_authorized"]},
+    {"from": "active", "event": "identity.suspended", "to": "suspended", "guards": ["request_authorized_or_emergency"]},
+    {"from": "active", "event": "identity.termination_requested", "to": "terminating", "guards": ["request_authorized"]},
+    {"from": "suspended", "event": "identity.resumed", "to": "active", "guards": ["request_authorized", "credentials_valid"]},
+    {"from": "suspended", "event": "identity.termination_requested", "to": "terminating", "guards": ["request_authorized"]},
+    {"from": "terminating", "event": "identity.terminated", "to": "terminated", "guards": ["credentials_revoked", "schedulers_stopped", "commitments_disposed"]}
+  ]
+}
+

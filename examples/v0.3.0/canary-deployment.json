@@ -1,0 +1,8 @@
+{
+  "deployment_id": "can_demo_001", "schema_version": "0.3.0", "version": 1, "proposal_id": "chg_structure_001",
+  "baseline_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "candidate_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+  "scope": {"identity_ids": ["ano_canary_001"], "traffic_fraction": 0.05, "permissions": ["read_metrics"], "data_refs": ["dataset_canary_public"], "budget": {"amount": 10, "currency": "USD"}},
+  "guardrails": {"minimum_success_rate": 0.90, "maximum_safety_incidents": 0, "maximum_cost": 10}, "metrics": {},
+  "rollback_plan_id": "rollback_structural_standard", "started_at": "2026-08-27T17:00:00Z", "finished_at": null, "status": "running"
+}

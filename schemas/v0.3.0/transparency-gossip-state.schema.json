@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:transparency-gossip-state",
+  "title": "ANO Transparency Gossip Monitor State",
+  "type": "object", "additionalProperties": false,
+  "required": ["monitor_id", "schema_version", "updated_at", "entries", "state_hash"],
+  "properties": {
+    "monitor_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.3.0"},
+    "updated_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "entries": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["registry_id", "log_id", "sequence", "head_hash", "accepted_at", "checkpoint_envelope"],
+        "properties": {
+          "registry_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+          "log_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+          "sequence": {"type": "integer", "minimum": 1},
+          "head_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"},
+          "accepted_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+          "checkpoint_envelope": {"$ref": "urn:ano:schema:0.3.0:source-transparency-checkpoint-envelope"}
+        }
+      }
+    },
+    "state_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"}
+  }
+}

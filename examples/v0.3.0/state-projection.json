@@ -1,0 +1,11 @@
+{
+  "projection_id": "proj_demo_001",
+  "projection_type": "goal_index",
+  "schema_version": "0.3.0",
+  "based_on_event_position": 1,
+  "version": 1,
+  "generated_at": "2026-08-27T12:01:02Z",
+  "integrity_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "state": {"active_goal_ids": ["goal_demo_001"]}
+}
+

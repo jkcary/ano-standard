@@ -1,0 +1,68 @@
+{
+  "checks": [
+    {
+      "check": "signed_baseline",
+      "detail": "baseline package signature and content hash verified",
+      "status": "passed"
+    },
+    {
+      "check": "governed_baseline_activation",
+      "detail": "initial package passed evaluation, independent approval and staging",
+      "status": "passed"
+    },
+    {
+      "check": "model_candidate_only",
+      "detail": "model advancement registered a candidate without production mutation",
+      "status": "passed"
+    },
+    {
+      "check": "goal_drift_rejected",
+      "detail": "observed=EVOLUTION_EVALUATION_BINDING_INVALID",
+      "status": "passed"
+    },
+    {
+      "check": "approval_collusion_rejected",
+      "detail": "observed=EVOLUTION_APPROVAL_INSUFFICIENT",
+      "status": "passed"
+    },
+    {
+      "check": "restart_no_auto_activation",
+      "detail": "staged candidate survived restart but active pointer stayed on baseline",
+      "status": "passed"
+    },
+    {
+      "check": "explicit_atomic_activation",
+      "detail": "explicit activation atomically moved transaction and active pointer",
+      "status": "passed"
+    },
+    {
+      "check": "signed_baseline_rollback",
+      "detail": "rollback restored the verified signed baseline",
+      "status": "passed"
+    },
+    {
+      "check": "evolution_chain",
+      "detail": "component evolution chain is continuous and externally anchorable",
+      "status": "passed"
+    },
+    {
+      "check": "permission_ceiling",
+      "detail": "observed=EVOLUTION_PERMISSION_EXPANSION",
+      "status": "passed"
+    },
+    {
+      "check": "package_tamper",
+      "detail": "observed=CAPABILITY_PACKAGE_HASH_INVALID",
+      "status": "passed"
+    }
+  ],
+  "component_id": "model_router",
+  "evolution_head_hash": "sha256:b2e8da0b8974767408819b6f38f9e911f698f76ffd72bdd406341299fb0bc7d6",
+  "generated_at": "2026-09-02T03:10:18.716Z",
+  "implementation_source_hash": "sha256:875dc9d5721761f9cbf207b2c8906ef69e97bc3d9ec3e1c696978950f204e5df",
+  "implementation_version": "0.5.0-alpha.4",
+  "report_id": "ear_9a0db7e46bfd4ca9a9e215c0827d690a",
+  "restored_package_id": "cpkg_0c470e433b7e4872a327cc6de73896d1",
+  "schema_version": "0.5.0",
+  "status": "passed"
+}

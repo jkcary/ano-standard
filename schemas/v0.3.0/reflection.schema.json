@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:ano:schema:0.3.0:reflection", "title": "ANO Reflection",
+  "type": "object", "additionalProperties": false,
+  "required": ["reflection_id", "schema_version", "version", "run_id", "subject_ids", "expected_outcome", "observed_outcome", "deviation", "root_cause_class", "lesson", "confidence", "proposed_updates", "source_event_ids", "created_at", "status"],
+  "properties": {
+    "reflection_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "schema_version": {"const": "0.3.0"}, "version": {"type": "integer", "minimum": 1},
+    "run_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "subject_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}},
+    "expected_outcome": {"type": "string", "minLength": 1}, "observed_outcome": {"type": "string", "minLength": 1}, "deviation": {"type": "string"}, "root_cause_class": {"type": "string", "minLength": 1}, "lesson": {"type": "string", "minLength": 1},
+    "confidence": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/confidence"},
+    "proposed_updates": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["update_type", "target_id"], "properties": {"update_type": {"enum": ["memory", "policy", "skill", "structure", "routing"]}, "target_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}}}},
+    "source_event_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}}, "created_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "status": {"enum": ["recorded", "proposal_generated", "dismissed"]}
+  }
+}

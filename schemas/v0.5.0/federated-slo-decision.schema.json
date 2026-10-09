@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:ano:schema:0.5.0:federated-slo-decision",
+  "title": "ANO Federated SLO Control Decision", "type": "object", "additionalProperties": false,
+  "required": ["decision_id", "schema_version", "policy_hash", "target_hash", "tenant_id", "service", "window_start", "window_end", "sample_count", "failure_count", "availability", "p95_latency_ms", "error_budget_burn_rate", "status", "operating_mode", "action", "decided_at"],
+  "properties": {
+    "decision_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, "schema_version": {"const": "0.5.0"},
+    "policy_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"}, "target_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"},
+    "tenant_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, "service": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "window_start": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"}, "window_end": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"},
+    "sample_count": {"type": "integer", "minimum": 0}, "failure_count": {"type": "integer", "minimum": 0},
+    "availability": {"type": "number", "minimum": 0, "maximum": 1}, "p95_latency_ms": {"type": "number", "minimum": 0},
+    "error_budget_burn_rate": {"type": "number", "minimum": 0}, "status": {"enum": ["met", "violated", "unknown"]},
+    "operating_mode": {"enum": ["normal", "degraded"]}, "action": {"enum": ["none", "degrade", "safe_degrade", "hold", "recover"]},
+    "decided_at": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"}
+  }
+}

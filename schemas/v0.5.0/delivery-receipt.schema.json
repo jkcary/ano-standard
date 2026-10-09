@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.5.0:delivery-receipt",
+  "title": "ANO Idempotent Inbox Delivery Receipt",
+  "type": "object", "additionalProperties": false,
+  "required": ["receipt_id", "schema_version", "consumer_id", "message_id", "tenant_id", "payload_hash", "effect_hash", "delivered_at", "idempotent_replay"],
+  "properties": {
+    "receipt_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.5.0"},
+    "consumer_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "message_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "tenant_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "payload_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"},
+    "effect_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"},
+    "delivered_at": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"},
+    "idempotent_replay": {"type": "boolean"}
+  }
+}

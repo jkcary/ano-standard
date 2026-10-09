@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:source-observation-registry-record",
+  "title": "ANO Source Observation Equivocation Registry Record",
+  "type": "object", "additionalProperties": false,
+  "required": ["record_id", "schema_version", "sequence", "previous_hash", "source_id", "source_domain", "run_id", "report_hash", "source_envelope_hash", "observed_at", "verdict", "conflicts_with_record_id", "report", "source_envelope", "record_hash"],
+  "properties": {
+    "record_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.3.0"},
+    "sequence": {"type": "integer", "minimum": 1},
+    "previous_hash": {"oneOf": [{"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"}, {"type": "null"}]},
+    "source_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "source_domain": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "run_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "report_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"},
+    "source_envelope_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"},
+    "observed_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "verdict": {"enum": ["accepted", "equivocation"]},
+    "conflicts_with_record_id": {"oneOf": [{"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, {"type": "null"}]},
+    "report": {"$ref": "urn:ano:schema:0.3.0:cluster-validation-report"},
+    "source_envelope": {"$ref": "urn:ano:schema:0.3.0:cluster-report-source-envelope"},
+    "record_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"}
+  }
+}

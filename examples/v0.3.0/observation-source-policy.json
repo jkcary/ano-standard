@@ -1,0 +1,22 @@
+{
+  "policy_id": "osp_demo_001",
+  "schema_version": "0.3.0",
+  "policy_version": 1,
+  "issued_at": "2026-08-28T08:00:00Z",
+  "maximum_source_age_seconds": 3600,
+  "sources": [{
+    "source_id": "cluster_sensor_a",
+    "source_domain": "sensor_domain_a",
+    "operator_domain": "sensor_operator_a",
+    "infrastructure_domain": "sensor_infra_a",
+    "upstream_ids": ["cluster_audit_a"],
+    "key_id": "sensor_a_ed25519_001",
+    "algorithm": "Ed25519",
+    "public_key_sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "status": "active",
+    "valid_from": "2026-08-28T00:00:00Z",
+    "valid_until": "2027-08-28T00:00:00Z",
+    "revoked_at": null,
+    "revocation_mode": "none"
+  }]
+}

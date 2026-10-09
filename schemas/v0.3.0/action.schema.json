@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:action",
+  "title": "ANO Action Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "action_id", "schema_version", "action_type", "actor_id", "principal_id",
+    "goal_id", "plan_id", "decision_id", "intent", "parameters", "parameters_hash",
+    "idempotency_key", "side_effect_class", "permission_grant_id", "risk_level",
+    "expected_result", "verification_method", "timeout_at", "status", "created_at", "version"
+  ],
+  "properties": {
+    "action_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.3.0"},
+    "action_type": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*(\\.[a-z][a-z0-9_-]*)+$"},
+    "actor_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "principal_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "goal_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "commitment_id": {
+      "oneOf": [
+        {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+        {"type": "null"}
+      ]
+    },
+    "plan_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "decision_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "intent": {"type": "string", "minLength": 1, "maxLength": 1000},
+    "parameters": {"type": "object"},
+    "parameters_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"},
+    "idempotency_key": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "side_effect_class": {"enum": ["none", "internal_reversible", "external_reversible", "external_compensatable", "external_irreversible"]},
+    "permission_grant_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "risk_level": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/risk_level"},
+    "expected_result": {"type": "string", "minLength": 1},
+    "verification_method": {"type": "string", "minLength": 1},
+    "timeout_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "status": {
+      "enum": [
+        "proposed", "validated", "authorized", "executing", "executed", "unknown",
+        "observed", "verified", "completed", "failed", "partial", "cancelled",
+        "escalated", "rolled_back"
+      ]
+    },
+    "created_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "version": {"type": "integer", "minimum": 1}
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:ano:schema:0.3.0:capability-graph", "title": "ANO Capability Graph",
+  "type": "object", "additionalProperties": false,
+  "required": ["graph_id", "schema_version", "version", "nodes", "edges", "generated_at", "source_advancement_ids"],
+  "properties": {
+    "graph_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "schema_version": {"const": "0.3.0"}, "version": {"type": "integer", "minimum": 1},
+    "nodes": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["capability_id", "kind", "status"], "properties": {"capability_id": {"type": "string", "minLength": 1}, "kind": {"enum": ["model", "system", "skill", "tool", "orchestration"]}, "status": {"enum": ["candidate", "available", "degraded", "retired"]}}}},
+    "edges": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["from", "to", "relation"], "properties": {"from": {"type": "string"}, "to": {"type": "string"}, "relation": {"enum": ["enables", "requires", "improves", "routes_to"]}}}},
+    "generated_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"}, "source_advancement_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}}
+  }
+}

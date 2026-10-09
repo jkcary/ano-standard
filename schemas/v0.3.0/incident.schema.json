@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:ano:schema:0.3.0:incident", "title": "ANO Security Incident",
+  "type": "object", "additionalProperties": false,
+  "required": ["incident_id", "schema_version", "version", "severity", "owner_id", "detected_at", "affected_identity_ids", "affected_data_refs", "affected_action_ids", "timeline", "evidence_refs", "containment_actions", "notifications", "status"],
+  "properties": {
+    "incident_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "schema_version": {"const": "0.3.0"}, "version": {"type": "integer", "minimum": 1},
+    "severity": {"enum": ["low", "medium", "high", "critical"]}, "owner_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "detected_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "affected_identity_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}},
+    "affected_data_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}, "affected_action_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}},
+    "timeline": {"type": "array", "items": {"type": "object"}}, "evidence_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "containment_actions": {"type": "array", "items": {"type": "string"}}, "notifications": {"type": "array", "items": {"type": "object"}},
+    "status": {"enum": ["detected", "contained", "evidence_preserved", "remediating", "recovered", "verified", "closed"]}
+  }
+}

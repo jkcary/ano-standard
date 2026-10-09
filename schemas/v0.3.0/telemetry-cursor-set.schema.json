@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:telemetry-cursor-set",
+  "title": "ANO Durable Telemetry Cursor Set",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "version", "cursors", "updated_at", "key_id", "signature"],
+  "properties": {
+    "schema_version": {"const": "0.3.0"},
+    "version": {"type": "integer", "minimum": 1},
+    "cursors": {
+      "type": "array", "uniqueItems": true,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["deployment_id", "source_id", "sequence", "envelope_hash"],
+        "properties": {
+          "deployment_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+          "source_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+          "sequence": {"type": "integer", "minimum": 1},
+          "envelope_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"}
+        }
+      }
+    },
+    "updated_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "key_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "signature": {"type": "string", "pattern": "^hmac-sha256:[a-f0-9]{64}$"}
+  }
+}

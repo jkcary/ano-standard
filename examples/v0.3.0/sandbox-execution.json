@@ -1,0 +1,7 @@
+{
+  "execution_id": "sbx_demo_001", "schema_version": "0.3.0", "proposal_id": "chg_structure_001",
+  "artifact_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "limits": {"cpu_ms": 1000, "memory_mb": 128, "wall_time_ms": 2000, "network": "none", "filesystem": "isolated_output"},
+  "allowed_inputs": ["public_fixture"], "allowed_outputs": ["result"], "denied_attempts": [],
+  "resource_usage": {"cpu_ms": 10, "memory_mb": 16}, "started_at": "2026-08-27T17:00:00Z", "finished_at": "2026-08-27T17:00:01Z", "status": "passed"
+}

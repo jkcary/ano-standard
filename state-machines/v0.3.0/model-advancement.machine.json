@@ -1,0 +1,16 @@
+{
+  "machine_id": "ano.model_advancement.lifecycle", "schema_version": "0.3.0", "entity_type": "model_advancement", "initial_state": "candidate",
+  "states": ["candidate", "discovered", "evaluated", "shadow", "canary", "promoted", "partitioned", "rejected", "rolled_back"], "terminal_states": ["rejected", "rolled_back"],
+  "transitions": [
+    {"from": "candidate", "event": "model.capabilities_discovered", "to": "discovered", "guards": ["adapter_registered", "limits_recorded"]},
+    {"from": "discovered", "event": "model.evaluated", "to": "evaluated", "guards": ["required_evals_passed", "capability_graph_updated"]},
+    {"from": "evaluated", "event": "model.shadowed", "to": "shadow", "guards": ["production_writes_disabled"]},
+    {"from": "shadow", "event": "model.canary_started", "to": "canary", "guards": ["scope_bounded", "permissions_unchanged"]},
+    {"from": "canary", "event": "model.promoted", "to": "promoted", "guards": ["guardrails_passed"]},
+    {"from": "canary", "event": "model.partitioned", "to": "partitioned", "guards": ["role_scope_defined"]},
+    {"from": "candidate", "event": "model.rejected", "to": "rejected", "guards": []},
+    {"from": "evaluated", "event": "model.rejected", "to": "rejected", "guards": []},
+    {"from": "canary", "event": "model.rolled_back", "to": "rolled_back", "guards": ["previous_adapter_restored"]},
+    {"from": "promoted", "event": "model.rolled_back", "to": "rolled_back", "guards": ["previous_adapter_restored"]}
+  ]
+}

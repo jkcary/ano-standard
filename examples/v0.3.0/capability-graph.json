@@ -1,0 +1,5 @@
+{
+  "graph_id": "capability_graph_main", "schema_version": "0.3.0", "version": 2,
+  "nodes": [{"capability_id": "long_horizon_tool_use", "kind": "model", "status": "available"}, {"capability_id": "project_planning", "kind": "system", "status": "candidate"}],
+  "edges": [{"from": "long_horizon_tool_use", "to": "project_planning", "relation": "enables"}], "generated_at": "2026-08-27T17:00:00Z", "source_advancement_ids": ["madv_demo_001"]
+}

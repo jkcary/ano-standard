@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.4.0:tenant-idempotency-record",
+  "title": "ANO Portable Tenant Idempotency Record",
+  "type": "object", "additionalProperties": false,
+  "required": ["tenant_id", "idempotency_key", "request_hash", "receipt"],
+  "properties": {
+    "tenant_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "idempotency_key": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "request_hash": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"},
+    "receipt": {"$ref": "urn:ano:schema:0.4.0:tenant-transaction-receipt"}
+  }
+}

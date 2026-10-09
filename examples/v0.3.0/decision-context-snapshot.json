@@ -1,0 +1,15 @@
+{
+  "snapshot_id": "dctx_demo_001",
+  "schema_version": "0.3.0",
+  "run_id": "run_demo_001",
+  "state_versions": {"world_model": 1, "permission_projection": 1},
+  "model_adapter_id": "adapter_demo_001",
+  "model_revision": "1",
+  "sampling_parameters_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+  "normalized_input_artifact": "artifact://decision-input/demo-001",
+  "tool_observation_ids": [],
+  "policy_versions": ["policy_demo_001"],
+  "schema_versions": ["action/0.3.0"],
+  "created_at": "2026-08-27T12:02:00Z"
+}
+

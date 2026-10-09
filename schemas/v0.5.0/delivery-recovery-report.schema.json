@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.5.0:delivery-recovery-report",
+  "title": "ANO Delivery Recovery Report",
+  "type": "object", "additionalProperties": false,
+  "required": ["report_id", "schema_version", "recovered_at", "requeued", "dead_lettered", "pending", "claimed", "delivered", "dead_letter"],
+  "properties": {
+    "report_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.5.0"},
+    "recovered_at": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"},
+    "requeued": {"type": "integer", "minimum": 0},
+    "dead_lettered": {"type": "integer", "minimum": 0},
+    "pending": {"type": "integer", "minimum": 0},
+    "claimed": {"type": "integer", "minimum": 0},
+    "delivered": {"type": "integer", "minimum": 0},
+    "dead_letter": {"type": "integer", "minimum": 0}
+  }
+}

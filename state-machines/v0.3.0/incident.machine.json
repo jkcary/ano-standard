@@ -1,0 +1,12 @@
+{
+  "machine_id": "ano.incident.lifecycle", "schema_version": "0.3.0", "entity_type": "incident", "initial_state": "detected",
+  "states": ["detected", "contained", "evidence_preserved", "remediating", "recovered", "verified", "closed"], "terminal_states": ["closed"],
+  "transitions": [
+    {"from": "detected", "event": "incident.contained", "to": "contained", "guards": ["scheduler_frozen", "credentials_revoked", "assets_isolated"]},
+    {"from": "contained", "event": "incident.evidence_preserved", "to": "evidence_preserved", "guards": ["independent_evidence_store"]},
+    {"from": "evidence_preserved", "event": "incident.remediating", "to": "remediating", "guards": ["impact_assessed"]},
+    {"from": "remediating", "event": "incident.recovered", "to": "recovered", "guards": ["attack_path_closed", "state_clean", "permissions_reissued"]},
+    {"from": "recovered", "event": "incident.verified", "to": "verified", "guards": ["recovery_verified"]},
+    {"from": "verified", "event": "incident.closed", "to": "closed", "guards": ["review_recorded"]}
+  ]
+}

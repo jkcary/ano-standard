@@ -1,0 +1,7 @@
+{
+  "proposal_id": "chg_demo_001", "schema_version": "0.3.0", "version": 1, "proposer_id": "ano_demo_001", "change_level": "L4_SKILL",
+  "target_components": ["skill_weekly_review"], "motivation": "improve verification", "evidence_ids": ["ref_demo_001"],
+  "patch_artifact_ref": "artifact://changes/chg_demo_001", "expected_benefits": {"task_success_rate_delta": 0.04}, "possible_harms": ["increased tool calls"],
+  "evaluation_plan_id": "eval_plan_standard", "rollback_plan_id": "rollback_standard", "requested_permissions": ["deploy_to_staging"],
+  "baseline_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000", "status": "proposed"
+}

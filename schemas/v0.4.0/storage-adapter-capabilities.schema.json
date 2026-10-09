@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.4.0:storage-adapter-capabilities",
+  "title": "ANO Storage Adapter Capabilities",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "adapter", "engine", "atomic_tenant_writes", "optimistic_concurrency", "tenant_audit_chain", "tenant_envelope_encryption", "portable_migration", "online_backup", "multi_node"],
+  "properties": {
+    "schema_version": {"const": "0.4.0"},
+    "adapter": {"type": "string", "minLength": 3, "maxLength": 128},
+    "engine": {"type": "string", "minLength": 3, "maxLength": 128},
+    "atomic_tenant_writes": {"type": "boolean"},
+    "optimistic_concurrency": {"type": "boolean"},
+    "tenant_audit_chain": {"type": "boolean"},
+    "tenant_envelope_encryption": {"type": "boolean"},
+    "portable_migration": {"type": "boolean"},
+    "online_backup": {"type": "boolean"},
+    "multi_node": {"type": "boolean"}
+  }
+}

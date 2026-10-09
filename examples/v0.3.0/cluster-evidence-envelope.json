@@ -1,0 +1,5 @@
+{
+  "payloadType": "application/vnd.ano.cluster-evidence-statement.v1+json",
+  "payload": "eyJkZW1vIjoid2l0bmVzc2VkIn0=",
+  "signatures": [{"keyid": "witness_ed25519_001", "sig": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="}]
+}

@@ -1,0 +1,6 @@
+{
+  "route_id": "rte_demo_001", "schema_version": "0.3.0", "deployment_id": "can_demo_001",
+  "router_id": "gateway_router_001", "previous_fraction": 0, "candidate_fraction": 0.05,
+  "scope_hash": "sha256:3333333333333333333333333333333333333333333333333333333333333333",
+  "generation": 1, "updated_at": "2026-08-27T17:02:00Z", "status": "applied"
+}

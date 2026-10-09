@@ -1,0 +1,16 @@
+{
+  "grant_id": "grant_demo_001",
+  "schema_version": "0.3.0",
+  "principal_id": "usr_demo_001",
+  "grantee_id": "ano_demo_001",
+  "capabilities": ["demo.send"],
+  "resource_scope": {"recipient": ["demo@example.com"]},
+  "constraints": {"max_actions": 1},
+  "valid_from": "2026-08-27T12:00:00Z",
+  "expires_at": "2026-08-28T12:00:00Z",
+  "revocable": true,
+  "assurance_level": "explicit_confirmation",
+  "status": "active",
+  "issued_at": "2026-08-27T12:00:00Z",
+  "version": 1
+}

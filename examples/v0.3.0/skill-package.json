@@ -1,0 +1,7 @@
+{
+  "skill_id": "skill_weekly_review", "schema_version": "0.3.0", "version": "1.3.0", "inputs_schema_ref": "schema://weekly-review/input/1.0",
+  "outputs_schema_ref": "schema://weekly-review/output/1.0", "required_tools": ["sheets.read", "docs.write"],
+  "required_permissions": ["read_business_metrics", "write_report_draft"], "side_effects": ["persistent_document_write"], "risk_level": "low",
+  "eval_suite_id": "eval_weekly_review_2", "artifact_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "source_ids": ["source_demo_001"], "approval_ids": ["approval_skill_001"], "monitoring_policy_id": "monitor_skill_standard", "rollback_version": "1.2.0", "status": "production"
+}

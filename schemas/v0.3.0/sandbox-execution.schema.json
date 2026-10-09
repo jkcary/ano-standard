@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:ano:schema:0.3.0:sandbox-execution", "title": "ANO Structural Change Sandbox Execution",
+  "type": "object", "additionalProperties": false,
+  "required": ["execution_id", "schema_version", "proposal_id", "artifact_hash", "limits", "allowed_inputs", "allowed_outputs", "denied_attempts", "resource_usage", "started_at", "finished_at", "status"],
+  "properties": {
+    "execution_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "schema_version": {"const": "0.3.0"}, "proposal_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "artifact_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"}, "isolation_attestation_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"}, "isolation_attestation_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"},
+    "limits": {"type": "object", "additionalProperties": false, "required": ["cpu_ms", "memory_mb", "wall_time_ms", "network", "filesystem"], "properties": {"cpu_ms": {"type": "integer", "minimum": 1}, "memory_mb": {"type": "integer", "minimum": 1}, "wall_time_ms": {"type": "integer", "minimum": 1}, "network": {"enum": ["none", "allowlist"]}, "filesystem": {"enum": ["none", "read_only_inputs", "isolated_output"]}}},
+    "allowed_inputs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}, "allowed_outputs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "denied_attempts": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["capability", "reason"], "properties": {"capability": {"type": "string"}, "reason": {"type": "string"}}}},
+    "resource_usage": {"type": "object", "additionalProperties": {"type": "number"}}, "started_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"}, "finished_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "status": {"enum": ["passed", "failed", "blocked", "timed_out"]}
+  }
+}

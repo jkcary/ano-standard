@@ -1,0 +1,8 @@
+{
+  "receipt_id": "dep_demo_001", "schema_version": "0.3.0", "deployment_id": "can_demo_001",
+  "provider_id": "kubernetes_provider_001",
+  "artifact_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+  "isolation_execution_hash": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+  "external_ref": "kubernetes://production/ano-candidate-v3", "generation": 1,
+  "created_at": "2026-08-27T17:01:00Z", "status": "staged"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.4.0:tenant-import-receipt",
+  "title": "ANO Atomic Tenant Import Receipt",
+  "type": "object", "additionalProperties": false,
+  "required": ["import_id", "schema_version", "tenant_id", "source_package_hash", "source_audit_head_hash", "object_count", "event_count", "idempotency_count", "imported_at", "atomic"],
+  "properties": {
+    "import_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.4.0"},
+    "tenant_id": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/identifier"},
+    "source_package_hash": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"},
+    "source_audit_head_hash": {"oneOf": [{"$ref": "urn:ano:schema:0.4.0:common#/$defs/hash"}, {"type": "null"}]},
+    "object_count": {"type": "integer", "minimum": 0},
+    "event_count": {"type": "integer", "minimum": 0},
+    "idempotency_count": {"type": "integer", "minimum": 0},
+    "imported_at": {"$ref": "urn:ano:schema:0.4.0:common#/$defs/timestamp"},
+    "atomic": {"const": true}
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.5.0:distributed-adapter-capabilities",
+  "title": "ANO Distributed Adapter Capabilities",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "adapter", "engine", "transactional_outbox", "idempotent_inbox", "lease_epoch_fencing", "claim_recovery", "dead_letter", "skip_locked_claim", "runtime_verified", "multi_process", "multi_host"],
+  "properties": {
+    "schema_version": {"const": "0.5.0"},
+    "adapter": {"type": "string", "minLength": 3, "maxLength": 128},
+    "engine": {"type": "string", "minLength": 3, "maxLength": 128},
+    "transactional_outbox": {"type": "boolean"},
+    "idempotent_inbox": {"type": "boolean"},
+    "lease_epoch_fencing": {"type": "boolean"},
+    "claim_recovery": {"type": "boolean"},
+    "dead_letter": {"type": "boolean"},
+    "skip_locked_claim": {"type": "boolean"},
+    "runtime_verified": {"type": "boolean"},
+    "multi_process": {"type": "boolean"},
+    "multi_host": {"type": "boolean"}
+  }
+}

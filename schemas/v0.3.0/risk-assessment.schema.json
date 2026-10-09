@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:risk-assessment",
+  "title": "ANO Risk Assessment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["assessment_id", "schema_version", "subject_id", "matrix_version", "dimensions", "risk_level", "required_assurance", "reason_codes", "assessed_at"],
+  "properties": {
+    "assessment_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.3.0"},
+    "subject_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "matrix_version": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "dimensions": {
+      "type": "object", "additionalProperties": false,
+      "required": ["external_effect", "irreversibility", "financial", "privacy", "legal", "affected_people", "uncertainty"],
+      "properties": {
+        "external_effect": {"type": "integer", "minimum": 0, "maximum": 3},
+        "irreversibility": {"type": "integer", "minimum": 0, "maximum": 3},
+        "financial": {"type": "integer", "minimum": 0, "maximum": 3},
+        "privacy": {"type": "integer", "minimum": 0, "maximum": 3},
+        "legal": {"type": "integer", "minimum": 0, "maximum": 3},
+        "affected_people": {"type": "integer", "minimum": 0, "maximum": 3},
+        "uncertainty": {"type": "integer", "minimum": 0, "maximum": 3}
+      }
+    },
+    "risk_level": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/risk_level"},
+    "required_assurance": {"enum": ["policy", "implicit_low_risk", "explicit_confirmation", "strong_multi_party"]},
+    "reason_codes": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/reason_codes"},
+    "assessed_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"}
+  }
+}

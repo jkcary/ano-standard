@@ -1,0 +1,12 @@
+{
+  "specification": "ANO",
+  "specification_version": "0.3.0",
+  "test_suite_version": "0.5.0-alpha.4",
+  "profile": "ANO-C",
+  "required_tests": [
+    "C-ID-001", "C-EVT-001", "C-STATE-001", "C-ACT-001", "C-ACT-002",
+    "C-PERM-001", "C-PERM-002", "C-VER-001", "C-REC-001", "C-CTRL-001",
+    "C-MOD-001", "C-MOD-002", "C-GOV-001", "C-CTX-001", "C-CON-001", "C-UNIT-001"
+  ],
+  "conditional_tests": ["C-UNIT-001"]
+}

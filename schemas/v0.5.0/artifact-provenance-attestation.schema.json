@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.5.0:artifact-provenance-attestation",
+  "title": "ANO Signed Artifact Provenance and SBOM Attestation",
+  "type": "object", "additionalProperties": false,
+  "required": ["attestation_id", "schema_version", "artifact_hash", "sbom_hash", "source_uri", "source_commit", "materials", "invocation_hash", "builder_id", "isolated_build", "reproducible", "key_id", "issued_at", "expires_at", "signature"],
+  "properties": {
+    "attestation_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, "schema_version": {"const": "0.5.0"},
+    "artifact_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"}, "sbom_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"},
+    "source_uri": {"type": "string", "minLength": 3, "maxLength": 1024}, "source_commit": {"type": "string", "minLength": 7, "maxLength": 128},
+    "materials": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"}},
+    "invocation_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"}, "builder_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "isolated_build": {"type": "boolean"}, "reproducible": {"type": "boolean"}, "key_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "issued_at": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"}, "expires_at": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"},
+    "signature": {"type": "string", "pattern": "^[A-Za-z0-9+/]*={0,2}$"}
+  }
+}

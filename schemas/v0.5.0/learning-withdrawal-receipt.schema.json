@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:ano:schema:0.5.0:learning-withdrawal-receipt",
+  "title": "ANO Signed Federated Learning Withdrawal Receipt", "type": "object", "additionalProperties": false,
+  "required": ["receipt_id", "schema_version", "withdrawal_id", "event_hash", "source_id", "source_version", "node_id", "invalidated_asset_ids", "unresolved_asset_ids", "status", "key_id", "applied_at", "signature"],
+  "properties": {
+    "receipt_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, "schema_version": {"const": "0.5.0"},
+    "withdrawal_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, "event_hash": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/hash"},
+    "source_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}, "source_version": {"type": "integer", "minimum": 1},
+    "node_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "invalidated_asset_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}},
+    "unresolved_asset_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"}},
+    "status": {"enum": ["complete", "incomplete"]}, "key_id": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/identifier"},
+    "applied_at": {"$ref": "urn:ano:schema:0.5.0:common#/$defs/timestamp"}, "signature": {"type": "string", "pattern": "^[A-Za-z0-9+/]*={0,2}$"}
+  }
+}

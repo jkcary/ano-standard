@@ -1,0 +1,6 @@
+{
+  "artifact_id": "artifact_demo_001", "schema_version": "0.3.0", "artifact_type": "tool", "version": "1.0.0", "source": "internal-build",
+  "integrity_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "signature": {"signer_id": "release_signer", "value": "signature-demo", "verified": true},
+  "builder_id": "build_agent", "approved_by": ["release_owner"], "status": "approved"
+}

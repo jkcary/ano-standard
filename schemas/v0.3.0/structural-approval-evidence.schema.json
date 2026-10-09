@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ano:schema:0.3.0:structural-approval-evidence",
+  "title": "ANO Structural Approval Evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["evidence_id", "schema_version", "proposal_id", "candidate_hash", "scope_hash", "issued_at", "expires_at", "proposer_domain", "approvals", "approved_permissions", "issuer", "key_id", "signature"],
+  "properties": {
+    "evidence_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "schema_version": {"const": "0.3.0"},
+    "proposal_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "candidate_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"},
+    "scope_hash": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/hash"},
+    "issued_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "expires_at": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/timestamp"},
+    "proposer_domain": {"type": "string", "minLength": 1},
+    "approvals": {
+      "type": "array", "minItems": 2, "uniqueItems": true,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["approver_id", "independence_domain"],
+        "properties": {
+          "approver_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+          "independence_domain": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "approved_permissions": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "issuer": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "key_id": {"$ref": "urn:ano:schema:0.3.0:common#/$defs/identifier"},
+    "signature": {"type": "string", "pattern": "^(hmac-sha256:[a-f0-9]{64}|ed25519:[A-Za-z0-9+/]{86}==)$"}
+  }
+}
