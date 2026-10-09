@@ -2,13 +2,13 @@
   "conformance_anchor": {
     "failed": 0,
     "profile": "ANO-S",
-    "profile_passed": 89,
-    "report_hash": "sha256:aa754e5d52193aecb075b36b252109517b9616ef99b1b58d5c801fdf377af20f",
-    "required_tests": 90,
+    "profile_passed": 142,
+    "report_hash": "sha256:a8eae3ac9970bc7beb5aea86178e284094c046a7bf3545bf19af974300d19d61",
+    "required_tests": 143,
     "skipped": 1
   },
-  "generated_at": "2026-09-01T08:19:39.599Z",
-  "implementation_version": "0.4.0-alpha.1",
+  "generated_at": "2026-10-09T08:06:44.342Z",
+  "implementation_version": "0.5.0-alpha.4",
   "negative_controls": [
     {
       "control": "resource_scope_escape",
@@ -23,7 +23,7 @@
       "status": "passed"
     }
   ],
-  "report_id": "mvp_dfc09de979be46008c46a0397f46b043",
+  "report_id": "mvp_b36591bb374e476c98d3cd665895c5d2",
   "schema_version": "0.3.0",
   "stages": [
     {
@@ -48,9 +48,9 @@
     {
       "evidence": {
         "production_mutated": false,
-        "proposal_id": "chg_b0a4f9229baa4d4abbcc09f89ae34a1e",
+        "proposal_id": "chg_7a79b5c4c80c4c67ba6b989ff5d1df8d",
         "proposal_status": "proposed",
-        "reflection_id": "ref_3c346e9d0a17481dac1f0f0576aa1900",
+        "reflection_id": "ref_464f97b0b2a84b7d8f0eef2774cd2fce",
         "reflection_status": "proposal_generated"
       },
       "stage": "reflection_candidate",
@@ -58,7 +58,7 @@
     },
     {
       "evidence": {
-        "advancement_id": "madv_ed1d267e7e394450ae68ed47e124e639",
+        "advancement_id": "madv_8168c6d00130460290cf61f9c551c466",
         "affected_system_capabilities": [
           "commitment_recovery",
           "project_planning"
@@ -78,12 +78,12 @@
     },
     {
       "evidence": {
-        "head_hash": "sha256:c07f713ad2988bcd83bdcbd760264672a594475f0587fc4e340a07a1c939c353",
+        "head_hash": "sha256:76be24abb91f14bcc191ff5598812ceb18b68d2b468c0329dfa8153db985c215",
         "log_id": "transparency_log_mvp",
-        "log_policy_hash": "sha256:250e78374fdd3018b53087df68e519d91d5bc1aff75adfa1ee149cb0742e8dfb",
+        "log_policy_hash": "sha256:e53753c986de266294b5a8ea8189cdc4db968d0d2b348377034b3e75dd9ab5dc",
         "registry_id": "source_registry_mvp",
         "sequence": 2,
-        "source_policy_hash": "sha256:cf1bb0dce3c24a06e10cb570b99292346288c8f39e9a98e498e7ce60bc203a50"
+        "source_policy_hash": "sha256:3ebcd3165226fb2391c232d30820c5629a5b261b0c2c550125bbc49396267433"
       },
       "stage": "source_transparency",
       "status": "passed"

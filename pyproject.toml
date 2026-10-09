@@ -6,11 +6,18 @@ build-backend = "setuptools.build_meta"
 name = "ano-reference-runtime"
 version = "0.5.0a4"
 description = "Minimal reference runtime and conformance tools for the ANO Specification"
+readme = "README.md"
+license = {file = "LICENSE"}
 requires-python = ">=3.10"
 dependencies = [
   "cryptography>=46,<52",
   "jsonschema>=4.23,<5",
 ]
+
+[project.urls]
+Homepage = "https://github.com/jkcary/ano-standard"
+Issues = "https://github.com/jkcary/ano-standard/issues"
+Documentation = "https://github.com/jkcary/ano-standard/blob/main/docs/QUICKSTART.md"
 
 [tool.setuptools]
 package-dir = {"" = "reference/python"}

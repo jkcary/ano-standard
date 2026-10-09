@@ -1,5 +1,5 @@
 {
-  "budget_allocation_id": "fba_d1162e83abbc4db8a92f31ea9f57babb",
+  "budget_allocation_id": "fba_3324bdfaba6546079249f1fa08f52c6f",
   "checks": [
     {
       "check": "signed_release_chain",
@@ -77,15 +77,15 @@
       "status": "passed"
     }
   ],
-  "consistent_view_hash": "sha256:6b69b3070c2561d49604fbcee64ca7fa4f39db0e5e6b5444b81df622a17c0b52",
+  "consistent_view_hash": "sha256:4f0df25a9d097f50853568603e7a608172fd9ceee69ead6b78a621db5610c036",
   "final_epoch": 2,
-  "generated_at": "2026-09-02T03:10:19.896Z",
-  "implementation_source_hash": "sha256:875dc9d5721761f9cbf207b2c8906ef69e97bc3d9ec3e1c696978950f204e5df",
+  "generated_at": "2026-10-09T08:06:45.666Z",
+  "implementation_source_hash": "sha256:f0b7166a6cfeafbd189cddceb9ee8f0df2dd091b517cc443120b6b249aad5c4b",
   "implementation_version": "0.5.0-alpha.4",
   "network_runtime_verified": false,
-  "report_id": "far_b5a1d8613bd149868169b3e2853bdba8",
+  "report_id": "far_a5905cd705014d349f476922112b6ec7",
   "schema_version": "0.5.0",
-  "slo_decision_id": "fsd_a55a9187254c49519d2c3b46fd347b54",
+  "slo_decision_id": "fsd_c034f75219994a03a7e371f938da3377",
   "status": "passed",
-  "withdrawal_id": "lwd_b8cf7d0427bf4fd29dafc1a2a21a23f8"
+  "withdrawal_id": "lwd_74ede402cb354357966c6731e3ac2e60"
 }

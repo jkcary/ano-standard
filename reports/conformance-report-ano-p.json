@@ -5,9 +5,9 @@
     ],
     "failed_tests": [],
     "implementation_name": "ANO Python Reference Runtime",
-    "implementation_source_hash": "sha256:875dc9d5721761f9cbf207b2c8906ef69e97bc3d9ec3e1c696978950f204e5df",
+    "implementation_source_hash": "sha256:f0b7166a6cfeafbd189cddceb9ee8f0df2dd091b517cc443120b6b249aad5c4b",
     "implementation_version": "0.5.0-alpha.4",
-    "issued_at": "2026-09-02T02:21:54.450Z",
+    "issued_at": "2026-10-09T08:05:46.761Z",
     "passed_tests": [
       "C-ACT-001",
       "C-ACT-002",
@@ -39,12 +39,12 @@
     "status": "conformant",
     "test_suite_version": "0.5.0-alpha.4"
   },
-  "duration_seconds": 19.677532,
+  "duration_seconds": 18.213661,
   "environment": {
     "platform": "Windows-11-10.0.22631-SP0",
     "python": "3.14.0"
   },
-  "finished_at": "2026-09-02T02:21:54.450Z",
+  "finished_at": "2026-10-09T08:05:46.761Z",
   "report_schema": "urn:ano:report:conformance:0.5.0-alpha.4",
   "results": [
     {
@@ -954,7 +954,7 @@
       "test_id": "V-SCH-001"
     }
   ],
-  "started_at": "2026-09-02T02:21:34.772Z",
+  "started_at": "2026-10-09T08:05:28.547Z",
   "summary": {
     "failed": 0,
     "invalid_skips": [],

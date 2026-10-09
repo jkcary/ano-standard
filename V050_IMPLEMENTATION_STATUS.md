@@ -4,7 +4,7 @@
 
 Alpha.4 在演化、分布式交付和外部信任平面之上增加联邦增长层：签名 policy/package 视图、独立节点 checkpoint、预算仲裁、多节点 SLO 与学习撤回传播。模型跃迁只能生成候选能力包，不拥有生产晋升权限。
 
-Alpha.4 冻结回归共执行 151 项测试：150 通过、1 项条件跳过、0 失败。五个累计 Profile 全部 `conformant`；最高 `ANO-S` 要求 143 项，142 项通过，另 1 项为声明允许的条件测试。Evolution、Distributed、External Trust、Federation 四套专项验收分别为 11/11、11/11、13/13、15/15，Alpha 审计为 16/16。全部最终报告绑定同一实现源码摘要 `sha256:875dc9d5721761f9cbf207b2c8906ef69e97bc3d9ec3e1c696978950f204e5df`。
+Alpha.4 冻结回归共执行 151 项测试：150 通过、1 项条件跳过、0 失败。五个累计 Profile 全部 `conformant`；最高 `ANO-S` 要求 143 项，142 项通过，另 1 项为声明允许的条件测试。Evolution、Distributed、External Trust、Federation 四套专项验收分别为 11/11、11/11、13/13、15/15，Alpha 审计为 16/16。全部最终报告绑定同一实现源码摘要 `sha256:f0b7166a6cfeafbd189cddceb9ee8f0df2dd091b517cc443120b6b249aad5c4b`。
 
 ## 已实现
 
@@ -35,3 +35,7 @@ Alpha.4 冻结回归共执行 151 项测试：150 通过、1 项条件跳过、0
 ## 当前边界
 
 SQLite 已验证共享数据库的多进程协调，但不主张多主机。当前环境没有 PostgreSQL 驱动或服务，因此 PostgreSQL 仅完成 SQL/能力契约，`runtime_verified=false`。Alpha.3 未连接真实云 KMS/HSM、企业 OIDC、SPIRE 或独立构建/透明日志服务，`remote_transport_verified=false`、`hsm_backed=false`。Alpha.4 使用多个独立本地数据库证明联邦协议，但没有真实跨主机网络、共识或跨地域运行认证，`network_runtime_verified=false`。
+
+## Open-source community preview
+
+2026-10-09：补齐 Apache-2.0 许可、中英文入口、快速开始、贡献与治理、安全报告和社区任务。重新执行五档一致性、四套验收与 Alpha 审计；报告绑定当前源码摘要。GitHub CI 的实际执行结果以 Actions 页面为准。

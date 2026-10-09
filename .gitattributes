@@ -1,0 +1,6 @@
+# Source digests must be identical on Windows and Linux checkouts.
+* text=auto eol=lf
+*.md whitespace=-blank-at-eol
+*.png binary
+*.jpg binary
+*.zip binary

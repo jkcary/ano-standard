@@ -11,3 +11,18 @@ build/
 dist/
 reports/*.tmp
 
+
+# Local credentials and runtime state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.sqlite
+*.sqlite3
+*.db
+*.db-wal
+*.db-shm
+.DS_Store
